@@ -42,7 +42,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       alignment: Alignment.bottomLeft,
       child: Text(
         "If you have any COVID-19 related symptoms," +
-            " please call your local general practitioner for advise.",
+            " please call your local general practitioner for advice.",
         style: TextStyle(
           fontWeight: FontWeight.normal,
         ),
