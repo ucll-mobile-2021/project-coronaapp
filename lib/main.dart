@@ -2,7 +2,10 @@
   Corona App
 */
 
+import 'dart:convert';
+import 'package:coronapp/type/coronastatistics.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http; //Zo kunnen we deze import met http aanspreken
 
 // Custom App Bar (with logo)
 import "widgets/customappbar.dart";
@@ -16,6 +19,8 @@ import 'screens/dashboard.dart';
 import 'screens/statistics.dart';
 import 'screens/tips.dart';
 import 'screens/more.dart';
+
+
 
 void main() => runApp(CoronaApp());
 
