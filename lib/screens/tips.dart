@@ -26,11 +26,23 @@ class _TipsScreenState extends State<TipsScreen> {
       "washyourhands_2.jpg",
     ),
     new Tip(
-      "Placeholder",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "placeholder.png",
-      "placeholder.png",
+      "Social distancing!",
+      "Social distancing, also called “physical distancing,” means keeping a safe space between yourself and other people who are not from your household. To practice social or physical distancing, stay at least 6 feet (about 2 arms' length) from other people who are not from your household in both indoor and outdoor spaces.",
+      "sociald.jpg",
+      "social_2.png",
     ),
+    new Tip(
+      "Don't touch your nose, eyes and mouth!",
+      "To help prevent infections, keep your hands away from your eyes, nose, and mouth. Why? Touching the mucous membranes on your face with your dirty hands allows germs that cause respiratory infections to enter the body.",
+      "dont.png",
+      "dont_2.jpg",
+    ),
+    new Tip(
+      "Stay at home when you feel sick!",
+      "Most people with COVID-19 have mild illness and can recover at home without medical care. Do not leave your home, except to get medical care. Do not visit public areas.",
+      "stayhome.jpg",
+      "stayhome_2.png",
+    )
   ];
 
   @override
