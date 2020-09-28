@@ -1,10 +1,8 @@
+import 'package:coronapp/screens/tips/tipexpanded.dart';
+import 'package:coronapp/type/tip.dart';
+import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/screenappbar.dart';
-import 'tips/tipexpanded.dart';
-// ignore: unused_import
-import "../config/styles.dart";
-import "../type/tip.dart";
 
 class TipsScreen extends StatefulWidget {
   @override

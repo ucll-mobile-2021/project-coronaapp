@@ -1,15 +1,15 @@
+import 'package:coronapp/screens/more/faq.dart';
+import 'package:coronapp/screens/more/help.dart';
+import 'package:coronapp/screens/more/info.dart';
+import 'package:coronapp/screens/more/notifications.dart';
+import 'package:coronapp/screens/more/settings.dart';
+import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/screenappbar.dart';
+
 // ignore: unused_import
 import "../config/styles.dart";
 
-// Tabs
-import 'more/help.dart';
-import 'more/notifications.dart';
-import 'more/settings.dart';
-import 'more/info.dart';
-import 'more/faq.dart';
 
 class MoreScreen extends StatefulWidget {
   @override

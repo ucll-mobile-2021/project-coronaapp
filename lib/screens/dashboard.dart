@@ -1,7 +1,6 @@
+import 'package:coronapp/config/styles.dart';
+import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
-
-import '../widgets/screenappbar.dart';
-import "../config/styles.dart";
 
 class DashboardScreen extends StatefulWidget {
   @override

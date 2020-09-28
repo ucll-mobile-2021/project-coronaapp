@@ -1,9 +1,5 @@
+import 'package:coronapp/type/question.dart';
 import 'package:flutter/material.dart';
-
-// ignore: unused_import
-import '../../config/styles.dart';
-
-import '../../type/question.dart';
 
 class FaqTab extends StatelessWidget {
   final questionsWithAnswers = [

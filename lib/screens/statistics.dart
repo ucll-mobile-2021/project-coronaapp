@@ -1,11 +1,9 @@
 import 'dart:convert';
 
 import 'package:coronapp/type/coronastatistics.dart';
+import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/screenappbar.dart';
-// ignore: unused_import
-import "../config/styles.dart";
 import 'package:http/http.dart' as http; //Zo kunnen we deze import met http aanspreken
 
 class StatisticsScreen extends StatefulWidget {

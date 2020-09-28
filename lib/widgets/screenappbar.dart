@@ -1,6 +1,5 @@
+import 'package:coronapp/config/styles.dart';
 import 'package:flutter/material.dart';
-
-import '../config/styles.dart';
 
 class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String titleOfScreen;

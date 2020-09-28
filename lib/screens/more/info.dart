@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore: unused_import
-import '../../config/styles.dart';
-
 class InfoTab extends StatelessWidget {
   final informationItems = [
     {
