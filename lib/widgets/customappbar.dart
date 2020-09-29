@@ -1,4 +1,6 @@
+import 'package:coronapp/config/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -8,12 +10,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   CustomAppBar({
     Key key,
-  })  : preferredSize = Size.fromHeight(56.0),
+  })
+      : preferredSize = Size.fromHeight(56.0),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(
+        context); // TODO // Theme parameter
+
     return AppBar(
+      backgroundColor: _themeChanger.themeColors(), // TODO // Theme parameter
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

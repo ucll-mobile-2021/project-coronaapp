@@ -4,7 +4,7 @@ class Styles {
   static const TextStyle styleMainTitle = TextStyle(
     fontSize: 27.0,
     fontWeight: FontWeight.bold,
-    color: Colors.black,
+    // color: Colors.black, // theme
   );
 
   static const TextStyle styleNormalText = TextStyle(

@@ -7,23 +7,41 @@ import 'package:coronapp/screens/statistics.dart';
 import 'package:coronapp/screens/tips.dart';
 import 'package:coronapp/widgets/customappbar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'config/theme.dart';
 
 void main() => runApp(CoronaApp());
 
 class CoronaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    return ChangeNotifierProvider<ThemeChanger>(
+      create: (_) => ThemeChanger(ThemeData.dark()),
+      child: new MaterialAppWithTheme(),
+    );
+  }
+}
+
+class MaterialAppWithTheme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Provider.of<ThemeChanger>(context); // TODO // Theme parameter
+
     return MaterialApp(
-      theme: ThemeData(
+      theme: theme.getTheme(),
+      /*theme: ThemeData(
         primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      ),*/
       home: BasicScreen(),
     );
   }
 }
 
 class BasicScreen extends StatefulWidget {
+
   @override
   _BasicScreenState createState() => _BasicScreenState();
 }
