@@ -15,7 +15,7 @@ class SettingsTab extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text("Change mode"),
+            Text(_themeChanger.getThemeName()),
             IconButton(
               onPressed: () => _themeChanger.toggleTheme(),
               icon: _themeChanger.getIcon(),
