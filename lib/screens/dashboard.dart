@@ -1,3 +1,4 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:coronapp/screens/dashboard/latestnews.dart';
 import 'package:coronapp/type/greeting.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
@@ -29,8 +30,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget _feelingSickSection() {
     final Widget _areYouFeelingSick = Align(
       alignment: Alignment.topLeft,
-      child: Text(
-        "Are you feeling sick?",
+      child: Text(getTranslated(context, 'feeling_sick'),
         style: TextStyle(
           fontSize: 17.0,
           fontWeight: FontWeight.bold,
@@ -40,9 +40,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     final Widget _ifYouHaveAnyCOVIDRelatedSymptoms = Align(
       alignment: Alignment.bottomLeft,
-      child: Text(
-        "If you have any COVID-19 related symptoms," +
-            " please call your local general practitioner for advice.",
+      child: Text(getTranslated(context, 'symptoms') + getTranslated(context, 'local_practitioner'),
         style: TextStyle(
           fontWeight: FontWeight.normal,
         ),
@@ -51,7 +49,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     // https://stackoverflow.com/questions/43149055/how-do-i-open-a-web-browser-url-from-my-flutter-code
     _launchURL() async {
-      const url = 'https://www.info-coronavirus.be/nl/';
+      String url = getTranslated(context, 'covid_url'); // TODO string om van taal te veranderen
       if (await canLaunch(url)) {
         await launch(url);
       } else {
@@ -72,12 +70,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
     final Widget _buttons = Row(
       children: [
         FlatButton.icon(
-          label: Text("Call"),
+          label: Text(getTranslated(context, 'call')),
           icon: Icon(Icons.call),
           onPressed: _launchCaller,
         ),
         FlatButton.icon(
-          label: Text("Website"),
+          label: Text(getTranslated(context, 'website')),
           icon: Icon(Icons.public),
           onPressed: _launchURL,
         ),
@@ -101,8 +99,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       children: [
         Align(
           alignment: Alignment.topLeft,
-          child: Text(
-            "Are you going on a trip?\nAre you coming back to Belgium?",
+          child: Text(getTranslated(context, 'going_trip'),
             style: TextStyle(
               fontSize: 17.0,
               fontWeight: FontWeight.bold,
@@ -111,8 +108,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
         Align(
           alignment: Alignment.topLeft,
-          child: Text(
-            "Please fill out the Public Health Passenger Locator Form 48 hours before your arrival in Belgium!",
+          child: Text(getTranslated(context, 'phpl'),
             style: TextStyle(
               fontWeight: FontWeight.normal,
             ),
@@ -122,7 +118,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
 
     _launchInformationForm() async {
-      const url = 'https://www.info-coronavirus.be/en/plf/';
+      String url = getTranslated(context, 'plf_url');
       if (await canLaunch(url)) {
         await launch(url);
       } else {
@@ -131,8 +127,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     }
 
     _launchFormItSelf() async {
-      const url =
-          'https://travel.info-coronavirus.be/public-health-passenger-locator-form';
+      String url = getTranslated(context, 'phpl_url'); // TODO enkel int engels beschikbaar die form?
       if (await canLaunch(url)) {
         await launch(url);
       } else {
@@ -143,12 +138,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
     final Widget _buttons = Row(
       children: [
         FlatButton.icon(
-          label: Text("More Info"),
+          label: Text(getTranslated(context, 'more_info')),
           icon: Icon(Icons.info_outline),
           onPressed: _launchInformationForm,
         ),
         FlatButton.icon(
-          label: Text("Form"),
+          label: Text(getTranslated(context, 'form')),
           icon: Icon(Icons.dehaze),
           onPressed: _launchFormItSelf,
         ),
@@ -169,7 +164,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ScreenAppBar("Dashboard"),
+      appBar: ScreenAppBar(getTranslated(context, 'dashboard')),
       body: ListView(
         children: [
           _greetingMessage(),

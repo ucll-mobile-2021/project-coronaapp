@@ -1,3 +1,4 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:flutter/widgets.dart';
 
 // https://www.info-coronavirus.be/en/news/
@@ -21,7 +22,7 @@ class _LatestNewsState extends State<LatestNews> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10.0),
-      child: Text("Latest news"),
+      child: Text(getTranslated(context, 'latest_news')),
     );
   }
 }

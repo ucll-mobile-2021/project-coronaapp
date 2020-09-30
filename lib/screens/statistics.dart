@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:coronapp/localization/translation.dart';
 import 'package:coronapp/type/coronastatistics.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ Future<CoronaStatistics> fetchPost() async {
   if  (response.statusCode == 200) {
     return CoronaStatistics.fromJson(json.decode(response.body));
   } else {
-    throw Exception("Failed to load the post, try again later");
+    throw Exception("Failed to load the post, try again later"); // TODO TRANSLATE
   }
 
 }
@@ -28,15 +29,15 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   final Future<CoronaStatistics> post = fetchPost();
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ScreenAppBar("Statistics"),
+      appBar: ScreenAppBar(getTranslated(context, 'statistics')),
       body: Center(
          child: FutureBuilder<CoronaStatistics>(
           future: post,
           builder: (context, snapshot){
             if (snapshot.hasData){
-              return Text("Confirmed Cases: " + snapshot.data.confirmedcases.toString() + "\nDeaths: "  + snapshot.data.deathcases.toString() + "\nRecovered: " +snapshot.data.recovered.toString());
+              return Text(getTranslated(context, 'confirmed') + snapshot.data.confirmedcases.toString() + getTranslated(context, 'deaths')  + snapshot.data.deathcases.toString() + getTranslated(context, 'recovered') +snapshot.data.recovered.toString());
             } else if (snapshot.hasError) {
-              return Text("Marko is een zieke kliitzak");
+              return Text(getTranslated(context, 'marko_kliitzak'));
             }
 
             return CircularProgressIndicator();

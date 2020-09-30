@@ -1,0 +1,34 @@
+{
+  "light_mode": "Mode clair",
+  "dark_mode": "Mode sombre",
+  "settings": "Paramètres",
+
+  "latest_news": "Dernières nouvelles",
+
+  "help": "Aide",
+  "info": "Info",
+  "notifications": "Notifications",
+  "change_lang": "Changer de Langue",
+  "tips": "Conseils",
+
+  "feeling_sick": "Vous vous sentez malade?",
+  "symptoms": "Si vous présentez des symptômes liés au COVID-19,",
+  "local_practitioner": " veuillez appeler votre médecin généraliste local pour obtenir des conseils.",
+  "covid_url": "https://www.info-coronavirus.be/fr/",
+  "call": "Appeler",
+  "website": "Site Web",
+  "going_trip": "Vous partez en voyage?\nVous rentrez en Belgique?",
+  "phpl": "Veuillez remplir le Formulaire de Localisation des Passagers de Santé Publique 48 heures avant votre arrivée en Belgique!",
+  "plf_url": "https://www.info-coronavirus.be/fr/plf/",
+  "phpl_url": "https://travel.info-coronavirus.be/public-health-passenger-locator-form",
+  "more_info": "Plus d'Infos",
+  "form": "Formulaire",
+  "dashboard": "Tableau",
+  "more": "Plus",
+  "statistics": "Statistiques",
+  "confirmed": "Cas confirmés\n: ",
+  "deaths": "\nMorts: ",
+  "recovered": "\nRétablis: ",
+  "marko_kliitzak": "Marko est un sale cinnard"
+
+}

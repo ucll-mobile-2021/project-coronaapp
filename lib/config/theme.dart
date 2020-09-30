@@ -36,6 +36,6 @@ class ThemeChanger with ChangeNotifier {
   }
 
   String getThemeName() {
-    return (_themeData == ThemeData.dark()) ? "Light mode" : "Dark mode";
+    return (_themeData == ThemeData.dark()) ? "light_mode" : "dark_mode";
   }
 }

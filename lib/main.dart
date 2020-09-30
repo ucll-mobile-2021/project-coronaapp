@@ -10,26 +10,86 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'config/theme.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'localization/localization.dart';
+import 'package:coronapp/localization/translation.dart';
 
 void main() => runApp(CoronaApp());
 
-class CoronaApp extends StatelessWidget {
+class CoronaApp extends StatefulWidget { // I18N stateful
+  static void setLocale(BuildContext context, Locale locale) { // I18N
+    _CoronaAppState state = context.findAncestorStateOfType<_CoronaAppState>();
+    state.setLocale(locale);
+  }
+
+  @override
+  _CoronaAppState createState() => _CoronaAppState();
+}
+
+class _CoronaAppState extends State<CoronaApp> {
+
+  Locale _locale; // I18N
+
+  void setLocale(Locale locale) {
+    setState(() { // I18N
+      _locale = locale;
+    });
+  }
+
+  @override
+  void didChangeDependencies() { // I18N
+    getLocale().then((locale) {
+      setState(() {
+        this._locale = locale;
+      });
+    });
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
-
     return ChangeNotifierProvider<ThemeChanger>(
       create: (_) => ThemeChanger(ThemeData.dark()),
-      child: new MaterialAppWithTheme(),
+      child: new MaterialAppWithTheme(_locale), // I18N
     );
   }
 }
 
 class MaterialAppWithTheme extends StatelessWidget {
+  final _locale; // I18N
+
+  MaterialAppWithTheme(this._locale); // I18N
+
   @override
   Widget build(BuildContext context) {
     final theme = Provider.of<ThemeChanger>(context); // TODO // Theme parameter
 
-    return MaterialApp(
+    if (_locale == null) return Container( // I18N
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+
+    else return MaterialApp(
+      locale: _locale, // I18N
+      supportedLocales: [
+        Locale('en', 'GB'),
+        Locale('fr', 'FR'),
+        Locale('de', 'DE'),
+        Locale('nl', 'BE'),
+      ],
+      localizationsDelegates: [
+        Localization.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      localeResolutionCallback: (deviceLocale, supportedLocales) {
+        for (var locale in supportedLocales) {
+          if (locale.languageCode == deviceLocale.languageCode && locale.countryCode == deviceLocale.countryCode) return deviceLocale;
+        }
+        return supportedLocales.first;
+      },
       theme: theme.getTheme(),
       /*theme: ThemeData(
         primarySwatch: Colors.red,
@@ -80,7 +140,7 @@ class _BasicScreenState extends State<BasicScreen> {
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.dashboard),
-              title: Text(screens[_currentIndex]["title"]),
+              title: Text(screens[_currentIndex]["title"]), // TODO TRANSLATE
               backgroundColor: Colors.red),
           BottomNavigationBarItem(
               icon: Icon(Icons.equalizer),

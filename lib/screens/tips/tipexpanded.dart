@@ -1,3 +1,4 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:flutter/material.dart';
 
 class TipExpandedScreen extends StatelessWidget {
@@ -52,7 +53,7 @@ class TipExpandedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Tips"),
+        title: Text(getTranslated(context, 'tips')),
         backgroundColor: Colors.red,
       ),
       body: ListView(

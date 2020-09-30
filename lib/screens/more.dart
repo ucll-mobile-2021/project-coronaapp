@@ -1,3 +1,4 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:coronapp/screens/more/faq.dart';
 import 'package:coronapp/screens/more/help.dart';
 import 'package:coronapp/screens/more/info.dart';
@@ -53,7 +54,7 @@ class _MoreScreenState extends State<MoreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ScreenAppBar("More"),
+      appBar: ScreenAppBar(getTranslated(context, 'more')),
       body: ListView.builder(
         padding: EdgeInsets.all(10),
         itemCount: listOfMoreItems.length,
@@ -63,7 +64,7 @@ class _MoreScreenState extends State<MoreScreen> {
               listOfMoreItems[index]["icon"],
               color: Colors.red[400],
             ),
-            title: Text(listOfMoreItems[index]["title"]),
+            title: Text(listOfMoreItems[index]["title"]), // TODO TRANSLATE
             trailing: Icon(Icons.keyboard_arrow_right),
             subtitle: Text(listOfMoreItems[index]["info"]),
             onTap: () {

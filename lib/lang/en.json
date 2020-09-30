@@ -1,0 +1,34 @@
+{
+  "light_mode": "Light mode",
+  "dark_mode": "Dark mode",
+  "settings": "Settings",
+
+  "latest_news": "Latest news",
+
+  "help": "Help",
+  "info": "Info",
+  "notifications": "Notifications",
+  "change_lang": "Change Language",
+  "tips": "Tips",
+
+  "feeling_sick": "Are you feeling sick?",
+  "symptoms": "If you have any COVID-19 related symptoms,",
+  "local_practitioner": " please call your local general practitioner for advice.",
+  "covid_url": "https://www.info-coronavirus.be/en/",
+  "call": "Call",
+  "website": "Website",
+  "going_trip": "Are you going on a trip?\nAre you coming back to Belgium?",
+  "phpl": "Please fill out the Public Health Passenger Locator Form 48 hours before your arrival in Belgium!",
+  "plf_url": "https://www.info-coronavirus.be/en/plf/",
+  "phpl_url": "https://travel.info-coronavirus.be/public-health-passenger-locator-form",
+  "more_info": "More info",
+  "form": "Form",
+  "dashboard": "Dashboard",
+  "more": "More",
+  "statistics": "Statistics",
+  "confirmed": "Confirmed Cases: ",
+  "deaths": "\nDeaths: ",
+  "recovered": "\nRecovered: ",
+  "marko_kliitzak": "Marko is a sick bitch"
+
+}

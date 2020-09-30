@@ -1,0 +1,34 @@
+{
+  "light_mode": "Lichtmodus",
+  "dark_mode": "Dunkler Modus",
+  "settings": "Einstellungen",
+
+  "latest_news": "Neuesten Nachrichten",
+
+  "help": "Hilfe",
+  "info": "Info",
+  "notifications": "Benachrichtigungen",
+  "change_lang": "Sprache ändern",
+  "tips": "Tipps",
+
+  "feeling_sick": "Fühlst du dich krank?",
+  "symptoms": "Wenn Sie Symptome im Zusammenhang mit COVID-19 haben,",
+  "local_practitioner": " Bitte rufen Sie Ihren örtlichen Allgemeinarzt an.",
+  "covid_url": "https://www.info-coronavirus.be/de/",
+  "call": "Anrufen",
+  "website": "Webseite",
+  "going_trip": "Gehst du auf eine Reise?\nKommst du zurück nach belgien\n",
+  "phpl": "Bitte füllen Sie 48 Stunden vor Ihrer Ankunft in Belgien das Formular für die Suche nach Passagieren im Öffentlichen Gesundheitswesen aus!\n",
+  "plf_url": "https://www.info-coronavirus.be/de/plf/",
+  "phpl_url": "https://travel.info-coronavirus.be/public-health-passenger-locator-form",
+  "more_info": "Mehr Info\n",
+  "form": "Formular",
+  "dashboard": "Instrumententafel",
+  "more": "Mehr",
+  "statistics": "Statistiken",
+  "confirmed": "Bestätigte Fälle: ",
+  "deaths": "\nTodesfälle: ",
+  "recovered": "\nWiederhergestellt: ",
+  "marko_kliitzak": "Marko ist eine kranke Schlampe"
+
+}

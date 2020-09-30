@@ -1,3 +1,4 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:flutter/material.dart';
 
 class HelpTab extends StatelessWidget {
@@ -5,11 +6,11 @@ class HelpTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Help"),
+        title: Text(getTranslated(context, 'help')),
         backgroundColor: Colors.red,
       ),
       body: Center(
-        child: Text("Help"),
+        child: Text(getTranslated(context, 'help')),
       ),
     );
   }

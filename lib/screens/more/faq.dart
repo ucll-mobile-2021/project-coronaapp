@@ -23,7 +23,7 @@ class FaqTab extends StatelessWidget {
       "Is the advice considered medically approved?",
       "No, this is a f*cking school project you idiot.",
     ),
-    new Question(
+    new Question( // TODO TRANSLATE?
       "What grade are you going to get for this project?",
       "Most likely a 19 out of 20, but a 20 is also good.",
     ),
@@ -33,7 +33,7 @@ class FaqTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("FAQ"),
+        title: Text("FAQ"), // TODO TRANSLATE?
         backgroundColor: Colors.red,
       ),
       body: ListView(

@@ -1,0 +1,34 @@
+{
+  "light_mode": "Lichte mode",
+  "dark_mode": "Donkere mode",
+  "settings": "Instellingen",
+
+  "latest_news": "Laatste nieuws",
+
+  "help": "Help",
+  "info": "Info",
+  "notifications": "Meldingen",
+  "change_lang": "Taal Veranderen",
+  "tips": "Tips",
+
+  "feeling_sick": "Voel je je ziek?",
+  "symptoms": "Als u COVID-19-gerelateerde symptomen heeft\n,",
+  "local_practitioner": " gelieve uw plaatselijke huisarts voor advies te bellen\n.",
+  "covid_url": "https://www.info-coronavirus.be/nl/",
+  "call": "Bellen",
+  "website": "Website",
+  "going_trip": "Gaat u op reis?\nKom je terug naar België?",
+  "phpl": "Gelieve 48 uur voor aankomst in België het Public Health Passenger Locator Formulier in te vullen!",
+  "plf_url": "https://www.info-coronavirus.be/nl/plf/",
+  "phpl_url": "https://travel.info-coronavirus.be/public-health-passenger-locator-form",
+  "more_info": "Meer info",
+  "form": "Formulier",
+  "dashboard": "Dashboard",
+  "more": "Meer",
+  "statistics": "Statistieken",
+  "confirmed": "Bevestigde gevallen: ",
+  "deaths": "\nDoden: ",
+  "recovered": "\nHersteld: ",
+  "marko_kliitzak": "Marko is een zieke kliitzak"
+
+}

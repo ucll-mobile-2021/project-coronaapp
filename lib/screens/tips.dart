@@ -1,3 +1,4 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:coronapp/screens/tips/tipexpanded.dart';
 import 'package:coronapp/type/tip.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
@@ -52,7 +53,7 @@ class _TipsScreenState extends State<TipsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ScreenAppBar("Tips"),
+      appBar: ScreenAppBar(getTranslated(context, 'tips')),
       body: GridView(
         physics: BouncingScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
