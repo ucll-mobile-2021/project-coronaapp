@@ -3,14 +3,14 @@ import 'dart:math';
 class Greeting {
   static String random() {
     final List<String> _greetings = [
-      "Hi there!", // TODO TRANSLATE
-      "Hello fellow earthling!",
-      "Ahoy, matey!",
-      "Hiya!",
-      "Hello!",
-      "Howdy!",
-      "Yo!",
-      "Whaddup!"
+      "hi", // TODO TRANSLATE
+      "hello",
+      "ahoy",
+      "hiy",
+      "he",
+      "how",
+      "yo",
+      "wazaap"
     ];
     return _greetings[new Random().nextInt(_greetings.length)];
   }

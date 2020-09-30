@@ -16,7 +16,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       margin: EdgeInsets.all(10.0),
       child: Center(
         child: Text(
-          Greeting.random(),
+          getTranslated(context, Greeting.random()),
           style: TextStyle(
             color: Colors.red,
             fontSize: 22.0,
