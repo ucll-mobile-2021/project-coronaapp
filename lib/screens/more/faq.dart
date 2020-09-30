@@ -1,7 +1,5 @@
-import 'package:coronapp/config/theme.dart';
 import 'package:coronapp/type/question.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class FaqTab extends StatelessWidget {
   final questionsWithAnswers = [
@@ -33,12 +31,10 @@ class FaqTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context); // Theme
-
     return Scaffold(
       appBar: AppBar(
         title: Text("FAQ"),
-        backgroundColor: _themeChanger.themeColors(),
+        backgroundColor: Colors.red,
       ),
       body: ListView(
         physics: BouncingScrollPhysics(),
