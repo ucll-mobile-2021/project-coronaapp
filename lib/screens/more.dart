@@ -7,10 +7,8 @@ import 'package:coronapp/screens/more/settings.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
 
-
 // ignore: unused_import
 import "../config/styles.dart";
-
 
 class MoreScreen extends StatefulWidget {
   @override
@@ -20,33 +18,33 @@ class MoreScreen extends StatefulWidget {
 class _MoreScreenState extends State<MoreScreen> {
   final listOfMoreItems = [
     {
-      "title": "Help",
+      "title": "help",
       "icon": Icons.help,
-      "info": "Call 911... oh wait don't do that",
+      "info": "call_911",
       "tab": HelpTab(),
     },
     {
-      "title": "FAQ",
+      "title": "faq",
       "icon": Icons.question_answer,
-      "info": "Frequently Asked Questions",
+      "info": "f_a_q",
       "tab": FaqTab(),
     },
     {
-      "title": "Notifications",
+      "title": "notifications",
       "icon": Icons.notifications,
-      "info": "Change notifications",
+      "info": "change_notif",
       "tab": NotificationsTab(),
     },
     {
-      "title": "Settings",
+      "title": "settings",
       "icon": Icons.settings,
-      "info": "Want to change something?",
+      "info": "want_change",
       "tab": SettingsTab(),
     },
     {
-      "title": "Info",
+      "title": "info",
       "icon": Icons.info,
-      "info": "About the app",
+      "info": "about",
       "tab": InfoTab(),
     },
   ];
@@ -64,9 +62,9 @@ class _MoreScreenState extends State<MoreScreen> {
               listOfMoreItems[index]["icon"],
               color: Colors.red[400],
             ),
-            title: Text(listOfMoreItems[index]["title"]), // TODO TRANSLATE
+            title: Text(getTranslated(context, listOfMoreItems[index]["title"])),
             trailing: Icon(Icons.keyboard_arrow_right),
-            subtitle: Text(listOfMoreItems[index]["info"]),
+            subtitle: Text(getTranslated(context, listOfMoreItems[index]["info"])),
             onTap: () {
               Navigator.push(
                 context,

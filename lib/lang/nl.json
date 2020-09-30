@@ -51,6 +51,13 @@
   "stay_home": "Blijf thuis als je je ziek voelt!",
   "most_sick": "De meeste mensen met COVID-19 hebben een milde ziekte en kunnen thuis zonder medische zorg herstellen. Verlaat uw huis niet, behalve om medische zorg te krijgen. Bezoek geen openbare ruimtes.",
   "sneeze_cough": "Nies en hoest in je elleboog",
-  "sneezing": "Bij het niezen spatten al je lichaamsvloeistoffen rond in een straal van anderhalve kilometer. Bezoek geen openbare ruimtes.\n"
+  "sneezing": "Bij het niezen spatten al je lichaamsvloeistoffen rond in een straal van anderhalve kilometer. Bezoek geen openbare ruimtes.",
+
+  "faq": "FAQ",
+  "call_911": "Bel 112 ... oh wacht, doe dat niet",
+  "f_a_q": "Veel Gestelde Vragen",
+  "change_notif": "Wijzig meldingen",
+  "want_change": "Iets veranderen?",
+  "about": "Over de app"
 
 }

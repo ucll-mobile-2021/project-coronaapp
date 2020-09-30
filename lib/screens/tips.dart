@@ -72,7 +72,6 @@ class _TipsScreenState extends State<TipsScreen> {
                     getTranslated(context, tip.tipName),
                     getTranslated(context, tip.tipText),
                     tip.tipBannerImage,
-                      //tip.tipName, tip.tipText, tip.tipBannerImage),  // TODO TRANSLATE
                   ),
                 ),
               );

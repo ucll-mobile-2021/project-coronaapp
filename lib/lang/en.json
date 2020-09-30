@@ -51,5 +51,12 @@
   "stay_home": "Stay at home when you feel sick!",
   "most_sick": "Most people with COVID-19 have mild illness and can recover at home without medical care. Do not leave your home, except to get medical care. Do not visit public areas.",
   "sneeze_cough": "Sneeze and cough into your elbow",
-  "sneezing": "When sneezing all your body fluids spatter around in a one-mile radius. Do not visit public areas."
+  "sneezing": "When sneezing all your body fluids spatter around in a one-mile radius. Do not visit public areas.",
+
+  "faq": "FAQ",
+  "call_911": "Call 911... oh wait don't do that",
+  "f_a_q": "Frequently Asked Questions",
+  "change_notif": "Change notifications",
+  "want_change": "Want to change something?",
+  "about": "About the app"
 }
