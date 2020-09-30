@@ -26,7 +26,7 @@ class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
     return ChangeNotifierProvider<ThemeChanger>(
       create: (_) => ThemeChanger(ThemeData.light()), // Bij app openen is mode eerst op light
       child: new AppBar(
-        //brightness: _themeChanger.getBrightness(), // THEMA TODO MORE?
+        brightness: _themeChanger.getBrightness(), // THEMA TODO MORE?
         backgroundColor: _themeChanger.themeColors(), // THEMA
         title: Text(
           titleOfScreen,

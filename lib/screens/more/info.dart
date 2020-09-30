@@ -34,13 +34,13 @@ class InfoTab extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             leading: Text(
-              getTranslated(context, informationItems[index]["key"]), // TODO TRANSLATE
+              getTranslated(context, informationItems[index]["key"]),
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            title: Text(informationItems[index]["value"]), // TODO TRANSLATE
+            title: Text(getTranslated(context, informationItems[index]["value"])),
           );
         },
       ),

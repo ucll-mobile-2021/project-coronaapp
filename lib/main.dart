@@ -27,7 +27,6 @@ class CoronaApp extends StatefulWidget { // I18N stateful
 }
 
 class _CoronaAppState extends State<CoronaApp> {
-
   Locale _locale; // I18N
 
   void setLocale(Locale locale) {
@@ -69,7 +68,6 @@ class MaterialAppWithTheme extends StatelessWidget {
         child: CircularProgressIndicator(),
       ),
     );
-
     else return MaterialApp(
       locale: _locale, // I18N
       supportedLocales: [
@@ -101,7 +99,6 @@ class MaterialAppWithTheme extends StatelessWidget {
 }
 
 class BasicScreen extends StatefulWidget {
-
   @override
   _BasicScreenState createState() => _BasicScreenState();
 }
@@ -144,15 +141,15 @@ class _BasicScreenState extends State<BasicScreen> {
               backgroundColor: Colors.red),
           BottomNavigationBarItem(
               icon: Icon(Icons.equalizer),
-              title: Text(screens[_currentIndex]["title"]),
+              title: Text(screens[_currentIndex]["title"]), // TODO TRANSLATE
               backgroundColor: Colors.red),
           BottomNavigationBarItem(
               icon: Icon(Icons.live_help),
-              title: Text(screens[_currentIndex]["title"]),
+              title: Text(screens[_currentIndex]["title"]), // TODO TRANSLATE
               backgroundColor: Colors.red),
           BottomNavigationBarItem(
               icon: Icon(Icons.menu),
-              title: Text(screens[_currentIndex]["title"]),
+              title: Text(screens[_currentIndex]["title"]), // TODO TRANSLATE
               backgroundColor: Colors.red),
         ],
         onTap: (index) {
