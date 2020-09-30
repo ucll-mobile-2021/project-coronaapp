@@ -1,31 +1,32 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:coronapp/type/question.dart';
 import 'package:flutter/material.dart';
 
 class FaqTab extends StatelessWidget {
   final questionsWithAnswers = [
     new Question(
-      "What is COVID-19?",
-      "You serious? Are you dead? Don't you read the news?",
+      "what_covid",
+      "serious",
     ),
     new Question(
-      "Do I have corona?",
-      "Idfk dumb ass... for god's sake test yourself and stay the hell away from me",
+      "do_corona",
+      "idfk",
     ),
     new Question(
-      "Is COVID-19 a conspiracy theory created by the Belgian government to distract us from the fact that 573 days after the election we still have no 'real' government?",
-      "Officially, no",
+      "conspiracy",
+      "official",
     ),
     new Question(
-      "How do we stop corona?",
-      "Why do you want to stop it? It's a great time to be alive!",
+      "stop_corona",
+      "why_stop",
     ),
     new Question(
-      "Is the advice considered medically approved?",
-      "No, this is a f*cking school project you idiot.",
+      "advice",
+      "school_project",
     ),
-    new Question( // TODO TRANSLATE?
-      "What grade are you going to get for this project?",
-      "Most likely a 19 out of 20, but a 20 is also good.",
+    new Question(
+      "grade",
+      "good",
     ),
   ];
 
@@ -48,7 +49,7 @@ class FaqTab extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        question.question,
+                        getTranslated(context, question.question),
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 20.0,
@@ -62,7 +63,7 @@ class FaqTab extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        question.answer,
+                        getTranslated(context, question.answer),
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 18.0,

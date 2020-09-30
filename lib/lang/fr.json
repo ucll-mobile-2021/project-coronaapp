@@ -67,5 +67,18 @@
   "he": "Salut!",
   "how": "Bien ou quoi!",
   "yo": "Yo!",
-  "wazaap": "Quoi de neuf!"
+  "wazaap": "Quoi de neuf!",
+
+  "what_covid": "Qu'est-ce que le COVID-19?",
+  "serious": "T'es sérieux? Es-tu mort? Tu ne lis pas les nouvelles?",
+  "do_corona": "Ai-je le corona?",
+  "idfk": "Jsp du con... pour l'amour de Dieu, testez-vous et restez loin de moi",
+  "conspiracy": "Le COVID-19 est-il une théorie du complot créée par le gouvernement belge pour nous distraire du fait que 573 jours après les élections, nous n'avons toujours pas de «vrai» gouvernement?",
+  "official": "Officiellement, non",
+  "stop_corona": "Comment arrêter le corona?",
+  "why_stop": "Pourquoi voulez-vous l'arrêter? C'est le moment idéal pour être en vie!",
+  "advice": "L'avis est-il considéré comme médicalement approuvé?",
+  "school_project": "Non, c'est un putain de projet d'école idiot.",
+  "grade": "Quelle note allez-vous obtenir pour ce projet?",
+  "good": "Très probablement un 19 sur 20, mais un 20 est également bon."
 }
