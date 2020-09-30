@@ -1,22 +1,23 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:flutter/material.dart';
 
 class InfoTab extends StatelessWidget {
   final informationItems = [
     {
-      "key": "Name",
-      "value": "Corona App",
+      "key": "name",
+      "value": "corona_app",
     },
     {
-      "key": "Version",
-      "value": "1.0.1 (20/12/2020)",
+      "key": "version",
+      "value": "version_value",
     },
     {
-      "key": "Made for",
-      "value": "Frédéric Vogels, the best teacher",
+      "key": "made_for",
+      "value": "best_teacher",
     },
     {
-      "key": "Made with <3 by",
-      "value": "Nick, Marko, Max, Yannick",
+      "key": "made_with_love",
+      "value": "group",
     },
   ];
 
@@ -33,7 +34,7 @@ class InfoTab extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             leading: Text(
-              informationItems[index]["key"], // TODO TRANSLATE
+              getTranslated(context, informationItems[index]["key"]), // TODO TRANSLATE
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,

@@ -29,6 +29,14 @@
   "confirmed": "Confirmed Cases: ",
   "deaths": "\nDeaths: ",
   "recovered": "\nRecovered: ",
-  "marko_kliitzak": "Marko is a sick bitch"
+  "marko_kliitzak": "Marko is a sick bitch",
 
+  "name": "Name",
+  "version": "Version",
+  "made_for": "Made for",
+  "made_with_love": "Made with love",
+  "corona_app": "Corona App",
+  "version_value": "1.0.1 (20/12/2020)",
+  "best_teacher": "Frédéric Vogels, the best teacher",
+  "group": "Nick, Marko, Max, Yannick"
 }

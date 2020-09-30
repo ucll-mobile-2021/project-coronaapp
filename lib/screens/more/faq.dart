@@ -33,7 +33,7 @@ class FaqTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("FAQ"), // TODO TRANSLATE?
+        title: Text("FAQ"),
         backgroundColor: Colors.red,
       ),
       body: ListView(

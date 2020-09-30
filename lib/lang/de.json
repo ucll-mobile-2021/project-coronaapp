@@ -29,6 +29,14 @@
   "confirmed": "Bestätigte Fälle: ",
   "deaths": "\nTodesfälle: ",
   "recovered": "\nWiederhergestellt: ",
-  "marko_kliitzak": "Marko ist eine kranke Schlampe"
+  "marko_kliitzak": "Marko ist eine kranke Schlampe",
 
+  "name": "Name",
+  "version": "Ausführung",
+  "made_for": "Gemacht für",
+  "made_with_love": "mit Liebe gemacht",
+  "corona_app": "Corona App",
+  "version_value": "1.0.1 (20/12/2020)",
+  "best_teacher": "Frédéric Vogels, der beste Lehrer",
+  "group": "Nick, Marko, Max, Yannick"
 }

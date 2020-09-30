@@ -10,7 +10,6 @@ import 'package:http/http.dart' as http; //Zo kunnen we deze import met http aan
 class StatisticsScreen extends StatefulWidget {
   @override
   _StatisticsScreenState createState() => _StatisticsScreenState();
-  
 }
 
 Future<CoronaStatistics> fetchPost() async {
@@ -21,7 +20,6 @@ Future<CoronaStatistics> fetchPost() async {
   } else {
     throw Exception("Failed to load the post, try again later"); // TODO TRANSLATE
   }
-
 }
 
 class _StatisticsScreenState extends State<StatisticsScreen> {
@@ -34,16 +32,11 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
          child: FutureBuilder<CoronaStatistics>(
           future: post,
           builder: (context, snapshot){
-            if (snapshot.hasData){
-              return Text(getTranslated(context, 'confirmed') + snapshot.data.confirmedcases.toString() + getTranslated(context, 'deaths')  + snapshot.data.deathcases.toString() + getTranslated(context, 'recovered') +snapshot.data.recovered.toString());
-            } else if (snapshot.hasError) {
-              return Text(getTranslated(context, 'marko_kliitzak'));
-            }
-
+            if (snapshot.hasData) return Text(getTranslated(context, 'confirmed') + snapshot.data.confirmedcases.toString() + getTranslated(context, 'deaths')  + snapshot.data.deathcases.toString() + getTranslated(context, 'recovered') +snapshot.data.recovered.toString());
+            else if (snapshot.hasError) return Text(getTranslated(context, 'marko_kliitzak')); // TODO vervangen door onderste lijn?
             return CircularProgressIndicator();
           }
         ),
-        
       ),
     );
   }

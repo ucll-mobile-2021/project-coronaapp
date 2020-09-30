@@ -49,7 +49,7 @@ class _SettingsTabState extends State<SettingsTab> {
                     _changeLanguage(language);
                   },
                   underline: SizedBox(),
-                  icon: Icon(Icons.language, color: Colors.white,),
+                  icon: Icon(Icons.language, color: _themeChanger.getLangColor(),),
                   items: Language.languageList().map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(
                     value: lang,
                     child: Row(

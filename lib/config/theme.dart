@@ -14,17 +14,11 @@ class ThemeChanger with ChangeNotifier {
     notifyListeners();
   }
 
-  Brightness getBrightness() {
-    return _themeData == ThemeData.dark() ? Brightness.light : Brightness.dark;
-  }
+  Brightness getBrightness() => (_themeData == ThemeData.dark()) ? Brightness.light : Brightness.dark;
 
-  dynamic themeColors() {
-    // ignore: unnecessary_statements
-    return (_themeData == ThemeData.dark()) ? Colors.grey[850] : Colors.red;
-  }
+  dynamic themeColors() => (_themeData == ThemeData.dark()) ? Colors.grey[850] : Colors.red;
 
-  Icon getIcon() {
-    return (_themeData == ThemeData.dark()) ?
+  Icon getIcon() => (_themeData == ThemeData.dark()) ?
     Icon(
       Icons.wb_sunny,
       color: Colors.redAccent,
@@ -33,9 +27,8 @@ class ThemeChanger with ChangeNotifier {
       Icons.brightness_3,
       color: Colors.grey[850],
     );
-  }
 
-  String getThemeName() {
-    return (_themeData == ThemeData.dark()) ? "light_mode" : "dark_mode";
-  }
+  dynamic getLangColor() => (_themeData == ThemeData.dark()) ? Colors.red : Colors.grey[850];
+
+  String getThemeName() => (_themeData == ThemeData.dark()) ? "light_mode" : "dark_mode";
 }

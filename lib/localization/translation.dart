@@ -2,9 +2,7 @@ import 'package:coronapp/localization/localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-String getTranslated(BuildContext context, String key) {
-  return Localization.of(context).getTranslatedValue(key);
-}
+String getTranslated(BuildContext context, String key) => Localization.of(context).getTranslatedValue(key);
 
 const String ENGLISH = 'en';
 const String FRENCH = 'fr';
@@ -15,7 +13,6 @@ const String LANGUAGE_CODE = 'languageCode';
 
 Future<Locale> setLocale(String languageCode) async {
   SharedPreferences _prefs = await SharedPreferences.getInstance();
-
   await _prefs.setString(LANGUAGE_CODE, languageCode);
 
   return _locale(languageCode);
