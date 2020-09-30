@@ -1,4 +1,6 @@
+import 'package:coronapp/config/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class TipExpandedScreen extends StatelessWidget {
   final String _tipName;
@@ -50,9 +52,12 @@ class TipExpandedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context); // Theme
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Tips"),
+        backgroundColor: _themeChanger.themeColors(),
       ),
       body: ListView(
         children: [
