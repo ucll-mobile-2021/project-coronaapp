@@ -3,7 +3,7 @@ import 'dart:math';
 class Greeting {
   static String random() {
     final List<String> _greetings = [
-      "hi", // TODO TRANSLATE
+      "hi",
       "hello",
       "ahoy",
       "hiy",

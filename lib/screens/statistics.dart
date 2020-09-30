@@ -15,16 +15,13 @@ class StatisticsScreen extends StatefulWidget {
 Future<CoronaStatistics> fetchPost() async {
   final response = await http.get("https://covid19-stats-api.herokuapp.com/api/v1/cases?country=Belgium"); // TODO select land
 
-  if  (response.statusCode == 200) {
-    return CoronaStatistics.fromJson(json.decode(response.body));
-  } else {
-    throw Exception("Failed to load the post, try again later"); // TODO TRANSLATE
-  }
+  if (response.statusCode == 200) return CoronaStatistics.fromJson(json.decode(response.body));
+  else throw Exception("Failed to load the post, try again later"); // TODO TRANSLATE
 }
 
 class _StatisticsScreenState extends State<StatisticsScreen> {
-  
   final Future<CoronaStatistics> post = fetchPost();
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ScreenAppBar(getTranslated(context, 'statistics')),

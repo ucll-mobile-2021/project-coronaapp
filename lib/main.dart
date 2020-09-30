@@ -108,19 +108,19 @@ class _BasicScreenState extends State<BasicScreen> {
 
   final screens = [
     {
-      "title": "Dashboard",
+      "title": "dashboard",
       "screen": DashboardScreen(),
     },
     {
-      "title": "Statistics",
+      "title": "statistics",
       "screen": StatisticsScreen(),
     },
     {
-      "title": "Tips",
+      "title": "tips",
       "screen": TipsScreen(),
     },
     {
-      "title": "More",
+      "title": "more",
       "screen": MoreScreen(),
     },
   ];
@@ -137,19 +137,19 @@ class _BasicScreenState extends State<BasicScreen> {
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.dashboard),
-              title: Text(screens[_currentIndex]["title"]), // TODO TRANSLATE
+              title: Text(getTranslated(context, screens[_currentIndex]["title"])),
               backgroundColor: Colors.red),
           BottomNavigationBarItem(
               icon: Icon(Icons.equalizer),
-              title: Text(screens[_currentIndex]["title"]), // TODO TRANSLATE
+              title: Text(getTranslated(context, screens[_currentIndex]["title"])),
               backgroundColor: Colors.red),
           BottomNavigationBarItem(
               icon: Icon(Icons.live_help),
-              title: Text(screens[_currentIndex]["title"]), // TODO TRANSLATE
+              title: Text(getTranslated(context, screens[_currentIndex]["title"])),
               backgroundColor: Colors.red),
           BottomNavigationBarItem(
               icon: Icon(Icons.menu),
-              title: Text(screens[_currentIndex]["title"]), // TODO TRANSLATE
+              title: Text(getTranslated(context, screens[_currentIndex]["title"])),
               backgroundColor: Colors.red),
         ],
         onTap: (index) {

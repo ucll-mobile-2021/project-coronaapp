@@ -49,7 +49,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     // https://stackoverflow.com/questions/43149055/how-do-i-open-a-web-browser-url-from-my-flutter-code
     _launchURL() async {
-      String url = getTranslated(context, 'covid_url'); // TODO string om van taal te veranderen
+      String url = getTranslated(context, 'covid_url'); // string om van taal te veranderen
       if (await canLaunch(url)) await launch(url);
        else throw 'Could not launch $url';
     }
@@ -118,7 +118,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     }
 
     _launchFormItSelf() async {
-      String url = getTranslated(context, 'phpl_url'); // TODO enkel int engels beschikbaar die form?
+      String url = getTranslated(context, 'phpl_url');
       if (await canLaunch(url)) await launch(url);
       else throw 'Could not launch $url';
     }
