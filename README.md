@@ -6,7 +6,7 @@
 Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven Limburg, commissioned by Mister F. Vogels
 
 ## Google docs
-[Goole Docs](https://docs.google.com/document/d/1ZcWHinmR31_1C4Sn5ZkiBSRSL_K1S2E2_ueMW-WkAWY/edit?usp=sharing)
+[Google Docs](https://docs.google.com/document/d/1ZcWHinmR31_1C4Sn5ZkiBSRSL_K1S2E2_ueMW-WkAWY/edit?usp=sharing)
 
 ## Table of Contents
 1. [Team](#Team)
