@@ -10,10 +10,12 @@ class SettingsTab extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Settings"),
+        backgroundColor: _themeChanger.themeColors(),
       ),
       body: Center(
         child: Column(
           children: [
+            Text("Change mode"),
             IconButton(
               onPressed: () => _themeChanger.toggleTheme(),
               icon: _themeChanger.getIcon(),
