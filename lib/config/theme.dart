@@ -9,7 +9,7 @@ class ThemeChanger with ChangeNotifier {
   getTheme() => _themeData;
 
   toggleTheme() {
-    if (_themeData == ThemeData.dark()) _themeData = ThemeData.light();
+    if (_themeData == ThemeData.dark()) _themeData = ThemeData.light(); // TODO eigen dark theme
     else _themeData = ThemeData.dark();
     notifyListeners();
   }
@@ -26,11 +26,11 @@ class ThemeChanger with ChangeNotifier {
   Icon getIcon() {
     return (_themeData == ThemeData.dark()) ?
     Icon(
-      Icons.brightness_3,
-      color: Colors.redAccent,
+      Icons.wb_sunny,
+      color: Colors.blue,
     ) :
     Icon(
-      Icons.wb_sunny,
+      Icons.brightness_3,
       color: Colors.grey[850],
     );
   }

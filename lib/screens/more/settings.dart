@@ -13,15 +13,22 @@ class SettingsTab extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          children: <Widget>[
+          children: [
+            IconButton(
+              onPressed: () => _themeChanger.toggleTheme(),
+              icon: _themeChanger.getIcon(),
+            ),
+            Text("Change language?"),
+          ],
+          /*children: <Widget>[
             Text("Change language?"),
             IconButton(
               onPressed: () => _themeChanger.toggleTheme(),
               icon: _themeChanger.getIcon(),
             )
-          ],
+          ],*/
         ),
-      ),
+      )
     );
   }
 }

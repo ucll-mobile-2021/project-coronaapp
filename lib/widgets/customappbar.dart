@@ -16,11 +16,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(
-        context); // TODO // Theme parameter
+    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context); // Theme
 
     return AppBar(
-      backgroundColor: _themeChanger.themeColors(), // TODO // Theme parameter
+      backgroundColor: _themeChanger.themeColors(), // Theme
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
