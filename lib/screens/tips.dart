@@ -40,6 +40,12 @@ class _TipsScreenState extends State<TipsScreen> {
       "Most people with COVID-19 have mild illness and can recover at home without medical care. Do not leave your home, except to get medical care. Do not visit public areas.",
       "stayhome.jpg",
       "stayhome_2.png",
+    ),
+    new Tip(
+      "Nies en hoest in je elleboog",
+      "When sneezing all your body fluids spatter around in a one-mile radius. Do not visit public areas.",
+      "stayhome.jpg",
+      "stayhome_2.png",
     )
   ];
 
