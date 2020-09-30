@@ -49,7 +49,7 @@ class _CoronaAppState extends State<CoronaApp> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<ThemeChanger>(
-      create: (_) => ThemeChanger(ThemeData.dark()),
+      create: (_) => ThemeChanger(ThemeData.light()), // App openen met mode light
       child: new MaterialAppWithTheme(_locale), // I18N
     );
   }
