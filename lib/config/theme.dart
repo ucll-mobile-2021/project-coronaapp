@@ -20,14 +20,14 @@ class ThemeChanger with ChangeNotifier {
 
   dynamic themeColors() {
     // ignore: unnecessary_statements
-    return (_themeData == ThemeData.dark()) ? Colors.grey[850] : Colors.blue;
+    return (_themeData == ThemeData.dark()) ? Colors.grey[850] : Colors.red;
   }
 
   Icon getIcon() {
     return (_themeData == ThemeData.dark()) ?
     Icon(
       Icons.wb_sunny,
-      color: Colors.blue,
+      color: Colors.redAccent,
     ) :
     Icon(
       Icons.brightness_3,
