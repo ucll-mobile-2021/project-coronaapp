@@ -31,7 +31,7 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 - [ ] Latest news (only latest 5 articles from [here](https://www.info-coronavirus.be/en/news))
 ### Statistics
 - [X] GET: JSON from API
-- [ ] Beautiful tiles (cases, deaths and recoverd from BE)
+- [ ] Beautiful tiles (cases, deaths and recovered from BE)
 - [ ] Graph
 - [ ] Extra information
 ### Tips
