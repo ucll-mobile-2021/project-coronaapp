@@ -38,6 +38,19 @@
   "corona_app": "Corona App",
   "version_value": "1.0.1 (20/12/2020)",
   "best_teacher": "Frédéric Vogels, de beste leraar",
-  "group": "Nick, Marko, Max, Yannick"
+  "group": "Nick, Marko, Max, Yannick",
+
+  "wear_mask": "Draag een masker!",
+  "wearing_mask_protects": "Het dragen van een gezichtsmasker beschermt u en anderen tegen de verspreiding van het coronavirus. Het is een van de gezonde reflexen die ons allemaal tegen het virus beschermt. U gebruikt een gezichtsmasker om uw neus en mond te bedekken. Als je niest, hoest of praat, vliegen er druppels rond. Het gezichtsmasker blokkeert de druppels. Op die manier is er minder kans dat iemand ziek wordt. Met andere woorden, het dragen van een gezichtsmasker gaat in de eerste plaats over het beschermen van anderen.",
+  "wash_hands": "Was je handen!",
+  "washing_your_hands": "Je handen wassen is de beste manier om te voorkomen dat ziektekiemen zich verspreiden. Denk aan alle dingen die je vandaag hebt aangeraakt - van de telefoon tot het toilet. Misschien snoot je je neus in een zakdoekje en ging je naar buiten om rond het vuil te graven. Wat je vandaag ook deed, je kwam in contact met ziektekiemen. Het is gemakkelijk voor een ziektekiem op uw hand om in uw mond terecht te komen. Bedenk hoeveel voedsel u met uw handen eet. Je kunt niet de hele dag rubberen handschoenen dragen, maar je kunt wel je handen wassen zodat die ziektekiemen geen kans krijgen om jou of iemand anders ziek te maken.",
+  "social_distancing": "Social distancing!",
+  "physical_distancing": "Social distancing, ook wel \"physical distancing\" genoemd, betekent een veilige ruimte bewaren tussen uzelf en andere mensen die niet tot uw huishouden behoren. Om sociale of fysieke afstand te oefenen, moet u ten minste 6 voet (ongeveer 2 armen lang) blijven van andere mensen die niet tot uw huishouden behoren, zowel binnen als buiten.",
+  "dont_touch": "Raak uw neus, ogen en mond niet aan!",
+  "prevent_infections": "Houd uw handen uit de buurt van uw ogen, neus en mond om infecties te voorkomen. Waarom? Als u de slijmvliezen van uw gezicht met uw vuile handen aanraakt, kunnen ziektekiemen die luchtweginfecties veroorzaken, het lichaam binnendringen.",
+  "stay_home": "Blijf thuis als je je ziek voelt!",
+  "most_sick": "De meeste mensen met COVID-19 hebben een milde ziekte en kunnen thuis zonder medische zorg herstellen. Verlaat uw huis niet, behalve om medische zorg te krijgen. Bezoek geen openbare ruimtes.",
+  "sneeze_cough": "Nies en hoest in je elleboog",
+  "sneezing": "Bij het niezen spatten al je lichaamsvloeistoffen rond in een straal van anderhalve kilometer. Bezoek geen openbare ruimtes.\n"
 
 }

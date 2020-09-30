@@ -6,7 +6,7 @@ class TipExpandedScreen extends StatelessWidget {
   final String _tipText;
   final String _tipBannerImage;
 
-  TipExpandedScreen(this._tipName, this._tipText, this._tipBannerImage);
+  TipExpandedScreen(this._tipName, this._tipText, this._tipBannerImage); // TODO TRANSLATE // tips.dart
 
   Widget bannerSection(String imageName) {
     return Image.asset(

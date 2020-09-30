@@ -62,13 +62,6 @@ class _SettingsTabState extends State<SettingsTab> {
                 ),
               )
             ],
-            /*children: <Widget>[
-            Text("Change language?"),
-            IconButton(
-              onPressed: () => _themeChanger.toggleTheme(),
-              icon: _themeChanger.getIcon(),
-            )
-          ],*/
           ),
         )
     );

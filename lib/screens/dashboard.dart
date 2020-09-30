@@ -50,21 +50,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
     // https://stackoverflow.com/questions/43149055/how-do-i-open-a-web-browser-url-from-my-flutter-code
     _launchURL() async {
       String url = getTranslated(context, 'covid_url'); // TODO string om van taal te veranderen
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
+      if (await canLaunch(url)) await launch(url);
+       else throw 'Could not launch $url';
     }
 
     // https://stackoverflow.com/questions/43149073/how-can-i-dial-the-phone-from-flutter
     _launchCaller() async {
       const url = "tel:1234567";
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
+      if (await canLaunch(url)) await launch(url);
+      else throw 'Could not launch $url';
     }
 
     final Widget _buttons = Row(
@@ -119,20 +113,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     _launchInformationForm() async {
       String url = getTranslated(context, 'plf_url');
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
+      if (await canLaunch(url)) await launch(url);
+      else throw 'Could not launch $url';
     }
 
     _launchFormItSelf() async {
       String url = getTranslated(context, 'phpl_url'); // TODO enkel int engels beschikbaar die form?
-      if (await canLaunch(url)) {
-        await launch(url);
-      } else {
-        throw 'Could not launch $url';
-      }
+      if (await canLaunch(url)) await launch(url);
+      else throw 'Could not launch $url';
     }
 
     final Widget _buttons = Row(

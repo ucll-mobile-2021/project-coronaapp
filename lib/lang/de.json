@@ -38,5 +38,18 @@
   "corona_app": "Corona App",
   "version_value": "1.0.1 (20/12/2020)",
   "best_teacher": "Frédéric Vogels, der beste Lehrer",
-  "group": "Nick, Marko, Max, Yannick"
+  "group": "Nick, Marko, Max, Yannick",
+
+  "wear_mask": "Eine Maske tragen!",
+  "wearing_mask_protects": "Das Tragen einer Gesichtsmaske schützt Sie und andere vor der Ausbreitung des Coronavirus. Es ist einer der gesunden Reflexe, die uns alle vor dem Virus schützen. Sie verwenden eine Gesichtsmaske, um Ihre Nase und Ihren Mund zu bedecken. Wenn Sie niesen, husten oder sprechen, fliegen Tröpfchen herum. Die Gesichtsmaske blockiert die Tröpfchen. Auf diese Weise besteht ein geringeres Risiko, jemanden krank zu machen. Mit anderen Worten, beim Tragen einer Gesichtsmaske geht es in erster Linie darum, andere zu schützen.",
+  "wash_hands": "Wasch deine Hände!",
+  "washing_your_hands": "Händewaschen ist der beste Weg, um die Ausbreitung von Keimen zu verhindern. Denken Sie an all die Dinge, die Sie heute berührt haben - vom Telefon bis zur Toilette. Vielleicht hast du dir die Nase in ein Taschentuch geputzt und bist dann nach draußen gegangen, um den Dreck zu graben. Was auch immer Sie heute getan haben, Sie sind mit Keimen in Kontakt gekommen. Es ist leicht, dass ein Keim an Ihrer Hand in Ihren Mund gelangt. Überlegen Sie, wie viele Lebensmittel Sie mit Ihren Händen essen. Sie können nicht den ganzen Tag Gummihandschuhe tragen, aber Sie können Ihre Hände waschen, damit diese Keime Sie oder andere nicht krank machen.",
+  "social_distancing": "Soziale Distanzierung!",
+  "physical_distancing": "Soziale Distanzierung, auch „physische Distanzierung“ genannt, bedeutet, einen sicheren Raum zwischen Ihnen und anderen Personen zu schaffen, die nicht aus Ihrem Haushalt stammen. Um soziale oder physische Distanzierung zu üben, halten Sie sich mindestens 6 Fuß (ca. 2 Arme) von anderen Personen entfernt, die nicht aus Ihrem Haushalt stammen, sowohl im Innen- als auch im Außenbereich.",
+  "dont_touch": "Berühren Sie nicht Nase, Augen und Mund!",
+  "prevent_infections": "Halten Sie Ihre Hände von Augen, Nase und Mund fern, um Infektionen vorzubeugen. Warum? Durch Berühren der Schleimhäute auf Ihrem Gesicht mit Ihren schmutzigen Händen können Keime, die Infektionen der Atemwege verursachen, in den Körper gelangen.",
+  "stay_home": "Bleib zu Hause, wenn du dich krank fühlst!",
+  "most_sick": "Die meisten Menschen mit COVID-19 haben eine leichte Krankheit und können sich ohne medizinische Versorgung zu Hause erholen. Verlassen Sie Ihr Zuhause nur, um medizinische Versorgung zu erhalten. Besuchen Sie keine öffentlichen Bereiche.",
+  "sneeze_cough": "Niesen und husten Sie in Ihren Ellbogen",
+  "sneezing": "Beim Niesen spritzen alle Körperflüssigkeiten in einem Radius von einer Meile herum. Besuchen Sie keine öffentlichen Bereiche.\n"
 }

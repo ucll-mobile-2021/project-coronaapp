@@ -13,7 +13,7 @@ class StatisticsScreen extends StatefulWidget {
 }
 
 Future<CoronaStatistics> fetchPost() async {
-  final response = await http.get("https://covid19-stats-api.herokuapp.com/api/v1/cases?country=Belgium");
+  final response = await http.get("https://covid19-stats-api.herokuapp.com/api/v1/cases?country=Belgium"); // TODO select land
 
   if  (response.statusCode == 200) {
     return CoronaStatistics.fromJson(json.decode(response.body));

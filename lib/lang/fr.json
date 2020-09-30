@@ -38,5 +38,18 @@
   "corona_app": "Corona App",
   "version_value": "1.0.1 (20/12/2020)",
   "best_teacher": "Frédéric Vogels, le meilleur professeur",
-  "group": "Nick, Marko, Max, Yannick"
+  "group": "Nick, Marko, Max, Yannick",
+
+  "wear_mask": "Portez un masque!",
+  "wearing_mask_protects": "Le port d'un masque facial vous protège, vous et les autres, de la propagation du coronavirus. C'est l'un des réflexes sains qui nous protège tous du virus. Vous utilisez un masque facial pour vous couvrir le nez et la bouche. Lorsque vous éternuez, toussez ou parlez, des gouttelettes volent. Le masque facial bloque les gouttelettes. De cette façon, il y a moins de risque de rendre quelqu'un malade. En d'autres termes, porter un masque facial, c'est avant tout protéger les autres.",
+  "wash_hands": "Lavez-vous les mains!",
+  "washing_your_hands": "Se laver les mains est le meilleur moyen d'empêcher la propagation des germes. Pensez à toutes les choses que vous avez touchées aujourd'hui - du téléphone aux toilettes. Peut-être que vous vous êtes mordu le nez dans un mouchoir et que vous êtes ensuite allé à l'extérieur pour creuser la terre. Quoi que vous ayez fait aujourd'hui, vous êtes entré en contact avec des germes. Il est facile pour un germe sur votre main de se retrouver dans votre bouche. Pensez au nombre d'aliments que vous mangez avec vos mains. Vous ne pouvez pas porter de gants en caoutchouc toute la journée, mais vous pouvez vous laver les mains pour que ces germes n'aient aucune chance de vous rendre malade, vous ou quelqu'un d'autre.",
+  "social_distancing": "Distanciation sociale!",
+  "physical_distancing": "La distance sociale, également appelée «distance physique», signifie garder un espace sûr entre vous-même et d'autres personnes qui ne sont pas de votre foyer. Pour pratiquer la distanciation sociale ou physique, restez à au moins 6 pieds (environ 2 bras) des autres personnes qui ne sont pas de votre ménage dans les espaces intérieurs et extérieurs.",
+  "dont_touch": "Ne touchez pas votre nez, vos yeux et votre bouche!",
+  "prevent_infections": "Pour éviter les infections, éloignez vos mains de vos yeux, de votre nez et de votre bouche. Pourquoi? Toucher les muqueuses de votre visage avec vos mains sales permet aux germes qui causent des infections respiratoires de pénétrer dans le corps.",
+  "stay_home": "Restez à la maison quand vous vous sentez malade!",
+  "most_sick": "La plupart des personnes atteintes de COVID-19 ont une maladie bénigne et peuvent se rétablir à la maison sans soins médicaux. Ne quittez pas votre domicile, sauf pour recevoir des soins médicaux. Ne visitez pas les espaces publics.",
+  "sneeze_cough": "Éternuez et toussez dans votre coude",
+  "sneezing": "Lorsque vous éternuez, tous vos liquides organiques éclaboussent dans un rayon d'un mile. Ne visitez pas les espaces publics."
 }
