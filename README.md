@@ -15,6 +15,7 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
     - [Statistics](#Statistics)
     - [Tips](#Tips)
     - [More](#More)
+3. [Extra](#Extra)
 3. [Disclaimer](#Disclaimer)
 
 ## Team
@@ -43,6 +44,10 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 - [X] FAQ
 - [ ] Settings
 - [X] Info
+
+## Extra
+- [X] Internationalization (EN,BE,FR and DE)
+- [X] Dark mode
 
 ## Disclaimer
 [link](https://nl.wikipedia.org/wiki/Regeringsformaties_Belgi%C3%AB_2019-2020)
