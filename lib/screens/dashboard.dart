@@ -30,7 +30,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget _feelingSickSection() {
     final Widget _areYouFeelingSick = Align(
       alignment: Alignment.topLeft,
-      child: Text(getTranslated(context, 'feeling_sick'),
+      child: Text(
+        getTranslated(context, 'feeling_sick'),
         style: TextStyle(
           fontSize: 17.0,
           fontWeight: FontWeight.bold,
@@ -40,7 +41,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     final Widget _ifYouHaveAnyCOVIDRelatedSymptoms = Align(
       alignment: Alignment.bottomLeft,
-      child: Text(getTranslated(context, 'symptoms') + getTranslated(context, 'local_practitioner'),
+      child: Text(
+        getTranslated(context, 'symptoms') +
+            getTranslated(context, 'local_practitioner'),
         style: TextStyle(
           fontWeight: FontWeight.normal,
         ),
@@ -49,16 +52,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     // https://stackoverflow.com/questions/43149055/how-do-i-open-a-web-browser-url-from-my-flutter-code
     _launchURL() async {
-      String url = getTranslated(context, 'covid_url'); // string om van taal te veranderen
-      if (await canLaunch(url)) await launch(url);
-       else throw 'Could not launch $url';
+      String url = getTranslated(
+          context, 'covid_url'); // string om van taal te veranderen
+      if (await canLaunch(url))
+        await launch(url);
+      else
+        throw 'Could not launch $url';
     }
 
     // https://stackoverflow.com/questions/43149073/how-can-i-dial-the-phone-from-flutter
     _launchCaller() async {
       const url = "tel:1234567";
-      if (await canLaunch(url)) await launch(url);
-      else throw 'Could not launch $url';
+      if (await canLaunch(url))
+        await launch(url);
+      else
+        throw 'Could not launch $url';
     }
 
     final Widget _buttons = Row(
@@ -93,7 +101,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
       children: [
         Align(
           alignment: Alignment.topLeft,
-          child: Text(getTranslated(context, 'going_trip'),
+          child: Text(
+            getTranslated(context, 'going_trip'),
             style: TextStyle(
               fontSize: 17.0,
               fontWeight: FontWeight.bold,
@@ -102,7 +111,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
         Align(
           alignment: Alignment.topLeft,
-          child: Text(getTranslated(context, 'phpl'),
+          child: Text(
+            getTranslated(context, 'phpl'),
             style: TextStyle(
               fontWeight: FontWeight.normal,
             ),
@@ -113,14 +123,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     _launchInformationForm() async {
       String url = getTranslated(context, 'plf_url');
-      if (await canLaunch(url)) await launch(url);
-      else throw 'Could not launch $url';
+      if (await canLaunch(url))
+        await launch(url);
+      else
+        throw 'Could not launch $url';
     }
 
     _launchFormItSelf() async {
       String url = getTranslated(context, 'phpl_url');
-      if (await canLaunch(url)) await launch(url);
-      else throw 'Could not launch $url';
+      if (await canLaunch(url))
+        await launch(url);
+      else
+        throw 'Could not launch $url';
     }
 
     final Widget _buttons = Row(

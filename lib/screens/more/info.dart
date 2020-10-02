@@ -40,7 +40,8 @@ class InfoTab extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            title: Text(getTranslated(context, informationItems[index]["value"])),
+            title:
+                Text(getTranslated(context, informationItems[index]["value"])),
           );
         },
       ),

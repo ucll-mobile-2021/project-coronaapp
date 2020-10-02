@@ -2,7 +2,8 @@ import 'package:coronapp/localization/localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-String getTranslated(BuildContext context, String key) => Localization.of(context).getTranslatedValue(key);
+String getTranslated(BuildContext context, String key) =>
+    Localization.of(context).getTranslatedValue(key);
 
 const String ENGLISH = 'en';
 const String FRENCH = 'fr';
@@ -21,18 +22,22 @@ Future<Locale> setLocale(String languageCode) async {
 Locale _locale(String languageCode) {
   Locale _temp;
 
-  switch(languageCode) {
+  switch (languageCode) {
     case ENGLISH:
-      _temp = Locale(languageCode, 'GB'); break;
+      _temp = Locale(languageCode, 'GB');
+      break;
 
     case FRENCH:
-      _temp = Locale(languageCode, 'FR'); break;
+      _temp = Locale(languageCode, 'FR');
+      break;
 
     case GERMAN:
-      _temp = Locale(languageCode, 'DE'); break;
+      _temp = Locale(languageCode, 'DE');
+      break;
 
     case DUTCH:
-      _temp = Locale(languageCode, 'BE'); break;
+      _temp = Locale(languageCode, 'BE');
+      break;
 
     default:
       _temp = Locale(ENGLISH, 'GB');

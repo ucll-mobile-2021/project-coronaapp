@@ -11,20 +11,19 @@ class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   //@override
   //Size get preferredSize => Size.fromHeight(100.0);
 
-  ScreenAppBar(this.titleOfScreen, {
+  ScreenAppBar(
+    this.titleOfScreen, {
     Key key,
-  })
-      : preferredSize = Size.fromHeight(56.0),
+  })  : preferredSize = Size.fromHeight(56.0),
         super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
-    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(
-        context); // Theme
+    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context); // Theme
 
     return ChangeNotifierProvider<ThemeChanger>(
-      create: (_) => ThemeChanger(ThemeData.light()), // Bij app openen is mode eerst op light
+      create: (_) => ThemeChanger(
+          ThemeData.light()), // Bij app openen is mode eerst op light
       child: new AppBar(
         brightness: _themeChanger.getBrightness(), // THEMA TODO MORE?
         backgroundColor: _themeChanger.themeColors(), // THEMA

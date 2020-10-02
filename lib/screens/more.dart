@@ -62,9 +62,13 @@ class _MoreScreenState extends State<MoreScreen> {
               listOfMoreItems[index]["icon"],
               color: Colors.red[400],
             ),
-            title: Text(getTranslated(context, listOfMoreItems[index]["title"])),
+            title: Text(
+              getTranslated(context, listOfMoreItems[index]["title"]),
+            ),
             trailing: Icon(Icons.keyboard_arrow_right),
-            subtitle: Text(getTranslated(context, listOfMoreItems[index]["info"])),
+            subtitle: Text(
+              getTranslated(context, listOfMoreItems[index]["info"]),
+            ),
             onTap: () {
               Navigator.push(
                 context,

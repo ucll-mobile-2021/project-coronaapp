@@ -10,8 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   CustomAppBar({
     Key key,
-  })
-      : preferredSize = Size.fromHeight(56.0),
+  })  : preferredSize = Size.fromHeight(56.0),
         super(key: key);
 
   @override

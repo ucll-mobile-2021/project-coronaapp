@@ -6,7 +6,8 @@ import 'package:coronapp/type/language.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SettingsTab extends StatefulWidget { // I18N Stateful
+class SettingsTab extends StatefulWidget {
+  // I18N Stateful
   @override
   _SettingsTabState createState() => _SettingsTabState();
 }
@@ -18,7 +19,8 @@ class _SettingsTabState extends State<SettingsTab> {
     showTimePicker(context: context, initialTime: TimeOfDay.now());
   }
 
-  void _changeLanguage(Language language) async { // I18N
+  void _changeLanguage(Language language) async {
+    // I18N
     Locale _temp = await setLocale(language.languageCode);
 
     CoronaApp.setLocale(context, _temp); // I18N
@@ -42,28 +44,38 @@ class _SettingsTabState extends State<SettingsTab> {
                 icon: _themeChanger.getIcon(),
               ),
               Text(getTranslated(context, 'change_lang')),
-              Padding( // I18N
+              Padding(
+                // I18N
                 padding: EdgeInsets.all(8.0),
                 child: DropdownButton(
                   onChanged: (Language language) {
                     _changeLanguage(language);
                   },
                   underline: SizedBox(),
-                  icon: Icon(Icons.language, color: _themeChanger.getLangColor(),),
-                  items: Language.languageList().map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(
-                    value: lang,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Text(lang.flag, style: TextStyle(fontSize: 30),),
-                        Text(lang.name)
-                      ],),
-                  )).toList(),
+                  icon: Icon(
+                    Icons.language,
+                    color: _themeChanger.getLangColor(),
+                  ),
+                  items: Language.languageList()
+                      .map<DropdownMenuItem<Language>>((lang) =>
+                          DropdownMenuItem(
+                            value: lang,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: <Widget>[
+                                Text(
+                                  lang.flag,
+                                  style: TextStyle(fontSize: 30),
+                                ),
+                                Text(lang.name)
+                              ],
+                            ),
+                          ))
+                      .toList(),
                 ),
               )
             ],
           ),
-        )
-    );
+        ));
   }
 }

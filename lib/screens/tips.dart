@@ -4,7 +4,6 @@ import 'package:coronapp/type/tip.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
 
-
 class TipsScreen extends StatefulWidget {
   @override
   _TipsScreenState createState() => _TipsScreenState();
