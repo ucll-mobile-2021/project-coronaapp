@@ -44,6 +44,7 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 - [X] FAQ
 - [ ] Settings
 - [X] Info
+- [X] Game (Using Sensor)
 
 ## Extra
 - [X] Internationalization (EN,BE,FR and DE)
