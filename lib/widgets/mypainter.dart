@@ -138,7 +138,7 @@ class _SensorState extends State<Sensor> {
         children: [
           Stack(
             children: [
-              dead? Text("You died", style: TextStyle(fontSize: 50, color: Colors.white, backgroundColor: Theme.of(context).primaryColor), textAlign: TextAlign.center, textWidthBasis: TextWidthBasis.longestLine,) : Text(''), /// show text when dead
+              dead? Text("You died", style: TextStyle(fontSize: 50, color: Colors.white, backgroundColor: color), textAlign: TextAlign.center, textWidthBasis: TextWidthBasis.longestLine,) : Text(''), /// show text when dead
               // This empty container is given a width and height to set the size of the stack
               Container(
                 height: height * 2/3,
