@@ -33,19 +33,17 @@ class _SensorState extends State<Sensor> {
   //Random rand;
   Size screenSize;
   double tileSize;
-  List<Enemy> enemies = List<Enemy>(); // todo how
+  List<Enemy> enemies = List<Enemy>();
   State state;
   PictureRecorder recorder;
-  int health = 50; //todo health
+  int health = 50;
   bool dead = false;
 
   _SensorState(this.screenSize) {
     initVars();
-    print("_sensorState"); //todo test
-    while (enemies.length < 50) { // todo 50 enemies
+    while (enemies.length < 50) {
       spawnEnemy();
     }
-    print("50 enemies spawn"); //todo
   }
 
   void stop() {
@@ -245,7 +243,7 @@ class _SensorState extends State<Sensor> {
                       Text(playing ? 'Pause' : 'Play'),
                     ]
                 ),
-                color: Theme.of(context).primaryColor,
+                color: Colors.red,
                 textColor: Colors.white,
               ),
               Text("Health: " + health.toString(), style: TextStyle(fontSize: 30,),),
