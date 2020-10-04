@@ -25,7 +25,7 @@ class _SensorState extends State<Sensor> {
   // hold a reference to these, so that they can be disposed
   Timer timer; // todo geen timer nodig?!
   StreamSubscription accel;
-  double left;
+  double left = 175;
   double width, height; // variables for screen size
   bool playing = false; // playing
   Canvas canvas; // todo gekregen van draw polygon, class shapepainter
@@ -52,41 +52,15 @@ class _SensorState extends State<Sensor> {
     dead = false;
   }
 
-/*  setColor(AccelerometerEvent event) {
-    // Calculate Left
-    double x = ((event.x * 12) + ((width - 100) / 2));
-    // Calculate Top
-    double y = event.y * 12 + 125;
-
-    // find the difference from the target position
-    var xDiff = x.abs() - ((width - 100) / 2);
-    var yDiff = y.abs() - 125;
-
-    // check if the circle is centered, currently allowing a buffer of 3 to make centering easier
-    if (xDiff.abs() < 3 && yDiff.abs() < 3) setState(() {
-        color = Colors.greenAccent;
-        count += 1;
-      });
-    else {
-      // set the color and restart count
-      setState(() {
-        color = Colors.red;
-        count = 0;
-      });
-    }
-  }*/
-
   setPosition(AccelerometerEvent event) {
     if (event == null) return;
 
     setState(() {
-      left = ((event.x * 12) + ((width - 100) / 2));
+      double leftie = ((event.x * 19) + ((width - 20) / 2));
+      if (leftie < 0) left = 0; /// virus teveel links
+      else if (leftie > 370) left = 355; /// virus teveel rechts
+      else left = leftie;
     });
-
-    // When y = 0 it should have a top position matching the target, which we set at 125
-    /* setState(() { // todo dit gebruiken om enemies te laten bewegen
-      top = event.y * 12 + 125;
-    });*/
   }
 
   startTimer() {
@@ -255,12 +229,7 @@ class _SensorState extends State<Sensor> {
     );
   }
 
-  //////////////////////////////////// enemy, ..
-  // init variables
-
-
   void initVars() async {
-    //screenSize = await Flame.util.initialDimensions();
     tileSize = screenSize.width / 10;
     canvas = new Canvas(new PictureRecorder());// todo difference 'new X()', 'X()' ??
     //todo test:
@@ -275,59 +244,31 @@ class _SensorState extends State<Sensor> {
     //double y = 10 - double.parse(Random().nextInt(screenSize.width.ceil() + 50).toString());
     Random rand = Random();
     double y;
-    switch (rand.nextInt(12)) { // todo use this om regelmatige x, dat ze allemaal over de hele breedte vallen
+    switch (rand.nextInt(12)) {
       case 0:
-      // Top
-      //  x = 0; // todo x altijd op scherm (tussen linker en rechter limiet)
-        y = -29; // tileSize / 2.5;
-        break;
+        y = -29; break;
       case 1:
-      // Right
-      //x = screenSize.width + tileSize * 2.5;
-        y = -78; // rand.nextDouble() / screenSize.height;
-        break;
+        y = -78; break;
       case 2:
-      // Bottom
-      //x = rand.nextDouble() * screenSize.width;
-        y = -121; // screenSize.height + tileSize / 2.5;
-        break;
+        y = -121; break;
       case 3:
-      // Left
-      //x = -tileSize * 2.5;
-        y = -209; // rand.nextDouble() / screenSize.height;
-        break;
+        y = -209; break;
       case 4:
-      //x = rand.nextDouble() * screenSize.width;
-        y = -287; // rand.nextDouble() / screenSize.height + 10;
-        break;
+        y = -287; break;
       case 5:
-      //x = rand.nextDouble() * (screenSize.width - 40);
-        y = -314; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        y = -314; break;
       case 6:
-      //x = rand.nextDouble() * (screenSize.width - 40);
-        y = -339; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        y = -339; break;
       case 7:
-      //x = rand.nextDouble() * (screenSize.width - 40);
-        y = -397; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        y = -397; break;
       case 8:
-      //x = rand.nextDouble() * (screenSize.width - 40);
-        y = -442; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        y = -442; break;
       case 9:
-      //x = rand.nextDouble() * (screenSize.width - 40);
-        y = -509; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        y = -509; break;
       case 10:
-      //x = rand.nextDouble() * (screenSize.width - 40);
-        y = -480; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        y = -480; break;
       case 11:
-      //x = rand.nextDouble() * (screenSize.width - 40);
-        y = -401; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        y = -401; break;
     }
     return y;
   }
@@ -335,59 +276,31 @@ class _SensorState extends State<Sensor> {
   double enemyX() {
     Random rand = Random();
     double x;
-    switch (rand.nextInt(12)) {  // todo use this om regelmatige x, dat ze allemaal over de hele breedte vallen
+    switch (rand.nextInt(12)) {
       case 0:
-      // Top
-        x = 0; // todo x altijd op scherm (tussen linker en rechter limiet)
-        //  y = -20; // tileSize / 2.5;
-        break;
+        x = 0; break;
       case 1:
-      // Right
-        x = screenSize.width + tileSize * 2.5;
-        //y = -50; // rand.nextDouble() / screenSize.height;
-        break;
+        x = screenSize.width + tileSize * 2.5; break;
       case 2:
-      // Bottom
-        x = rand.nextDouble() * screenSize.width;
-        //y = -100; // screenSize.height + tileSize / 2.5;
-        break;
+        x = rand.nextDouble() * screenSize.width; break;
       case 3:
-      // Left
-        x = -tileSize * 2.5;
-        //y = - 200; // rand.nextDouble() / screenSize.height;
-        break;
+        x = -tileSize * 2.5; break;
       case 4:
-        x = rand.nextDouble() * screenSize.width;
-        //y = -150; // rand.nextDouble() / screenSize.height + 10;
-        break;
+        x = rand.nextDouble() * screenSize.width; break;
       case 5:
-        x = rand.nextDouble() * (screenSize.width - 40);
-        //y = -300; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        x = rand.nextDouble() * (screenSize.width - 40); break;
       case 6:
-        x = rand.nextDouble() * (screenSize.width - 60);
-        //y = -300; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        x = rand.nextDouble() * (screenSize.width - 60); break;
       case 7:
-        x = rand.nextDouble() * (screenSize.width - 50);
-        //y = -300; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        x = rand.nextDouble() * (screenSize.width - 50); break;
       case 8:
-        x = rand.nextDouble() * (screenSize.width - 5);
-        //y = -300; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        x = rand.nextDouble() * (screenSize.width - 5); break;
       case 9:
-        x = rand.nextDouble() * (screenSize.width - 10);
-        //y = -300; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        x = rand.nextDouble() * (screenSize.width - 10); break;
       case 10:
-        x = rand.nextDouble() * (screenSize.width - 20);
-        //y = -300; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        x = rand.nextDouble() * (screenSize.width - 20); break;
       case 11:
-        x = rand.nextDouble() * (screenSize.width - 30);
-        //y = -300; // rand.nextDouble() / screenSize.height + 50;
-        break;
+        x = rand.nextDouble() * (screenSize.width - 30); break;
     }
     return x;
   }
@@ -404,22 +317,6 @@ class _SensorState extends State<Sensor> {
     double verticalDistance = (520 - (y + 10)).abs(); // (middelpunt player) - (middelpunt enemy) abs
     return (horizontalDistance <= 32 && verticalDistance <= 32); /// touch when max 2 px? apart
   }
-
-/*  void render() { // canvas background
-    Rect background = Rect.fromLTWH(0, 0, screenSize.width, screenSize.height);
-    Paint backgroundPaint = Paint()..color = Color(0xFFFAFAFA);
-    canvas.drawRect(background, backgroundPaint);
-
-    if (!playing) {
-      startText.render(canvas);  //todo
-      highscoreText.render(canvas);
-    }
-    else {
-      enemies.forEach((Enemy enemy) => enemy.render(canvas));
-      scoreText.render(canvas);
-      healthBar.render(canvas);
-    }
-  }*/
 }
 
 class EnemyOval extends StatelessWidget {
@@ -434,7 +331,6 @@ class EnemyOval extends StatelessWidget {
     return Positioned(
       top: enemies[index].enemyOffset.dy,
       left: enemies[index].enemyOffset.dx,
-      // the container has a color and is wrapped in a ClipOval to make it round
       child: ClipOval(
         child: Container(
           width: 20,
