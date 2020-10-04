@@ -177,14 +177,7 @@ class _SensorState extends State<Sensor> {
               Positioned(
                 top: 500,
                 left: left ?? (width - 100) / 2,
-                // the container has a color and is wrapped in a ClipOval to make it round
-                child: ClipOval(
-                  child: Container(
-                    width: 40,
-                    height: 40,
-                    color: color,
-                  ),
-                ),
+                child: Image.asset('assets/images/logo.png', scale: 6),
               ),
               /// enemies
               EnemyOval(0, enemies, Colors.red),
