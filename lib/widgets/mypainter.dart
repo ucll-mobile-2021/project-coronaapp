@@ -167,13 +167,13 @@ class _SensorState extends State<Sensor> {
               dead? Text("You died", style: TextStyle(fontSize: 50, color: Colors.white, backgroundColor: Theme.of(context).primaryColor), textAlign: TextAlign.center, textWidthBasis: TextWidthBasis.longestLine,) : Text(''), /// show text when dead
               // This empty container is given a width and height to set the size of the stack
               Container(
-                height: height * 2.2/3,
+                height: height * 2/3,
                 width: width,
               ),
               // This is the colored circle that will be moved by the accelerometer
               // the top and left are variables that will be set
               Positioned(
-                top: 500,
+                top: 450,
                 left: left ?? (width - 100) / 2,
                 child: Image.asset('assets/images/logo.png', scale: 6),
               ),
