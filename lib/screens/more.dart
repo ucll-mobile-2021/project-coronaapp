@@ -1,5 +1,6 @@
 import 'package:coronapp/localization/translation.dart';
 import 'package:coronapp/screens/more/faq.dart';
+import 'package:coronapp/screens/more/game.dart';
 import 'package:coronapp/screens/more/help.dart';
 import 'package:coronapp/screens/more/info.dart';
 import 'package:coronapp/screens/more/notifications.dart';
@@ -46,6 +47,12 @@ class _MoreScreenState extends State<MoreScreen> {
       "icon": Icons.info,
       "info": "about",
       "tab": InfoTab(),
+    },
+    {
+      "title": "game",
+      "icon": Icons.arrow_forward_ios_rounded,
+      "info": "game_info",
+      "tab": GameTab(),
     },
   ];
 
