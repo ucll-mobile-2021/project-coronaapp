@@ -147,7 +147,7 @@ class _SensorState extends State<Sensor> {
               // This is the colored circle that will be moved by the accelerometer
               // the top and left are variables that will be set
               Positioned(
-                top: 450,
+                top: height / 1.65, // todo niet hardcoden, moet op alle gsm werken
                 left: left ?? (width - 100) / 2,
                 child: Image.asset('assets/images/logo.png', scale: 6),
               ),
