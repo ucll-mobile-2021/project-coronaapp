@@ -83,5 +83,7 @@
   "advice": "Is the advice considered medically approved?",
   "school_project": "No, this is a f*cking school project you idiot.",
   "grade": "What grade are you going to get for this project?",
-  "good": "Most likely a 19 out of 20, but a 20 is also good."
+  "good": "Most likely a 19 out of 20, but a 20 is also good.",
+
+  "choose_country": "Choose a country"
 }

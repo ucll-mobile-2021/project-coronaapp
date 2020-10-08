@@ -62,7 +62,6 @@
   "game": "Spel",
   "game_info":  "Corona Spel",
 
-
   "hi": "Hallo daar!",
   "hello": "Hallo mede-aardbewoner!",
   "ahoy": "Ahoy, maatje!",
@@ -83,5 +82,7 @@
   "advice": "Wordt het advies als medisch goedgekeurd beschouwd?",
   "school_project": "Nee, dit is een verdomd schoolproject, idioot.",
   "grade": "Welk cijfer ga je halen voor dit project?",
-  "good": "Most likely a 19 out of 20, but a 20 is also good."
+  "good": "Most likely a 19 out of 20, but a 20 is also good.",
+
+  "choose_country": "Kies een land"
 }

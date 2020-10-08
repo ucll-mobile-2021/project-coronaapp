@@ -32,7 +32,6 @@ class GetCountry {
     else return code;
   }
   void setCode(String code) {
-    print("set code to: " + code); //todo
     this.code = code;
   }
 }
@@ -45,7 +44,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
           CountryListPick(
             appBar: AppBar(
               backgroundColor: Colors.red,
-              title: Text('Choisir un pays'), // needed by zoeken van een land // todo translate
+              title: Text(getTranslated(context, 'choose_country')), // needed by zoeken van een land // todo translate
             ),
             initialSelection: widget.getCountry.getCode() == null || widget.getCountry.getCode() == "" ? '+32' : widget.getCountry.getCode().split('.')[2],
             onChanged: (CountryCode code) {

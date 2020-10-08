@@ -83,5 +83,7 @@
   "advice": "L'avis est-il considéré comme médicalement approuvé?",
   "school_project": "Non, c'est un putain de projet d'école idiot.",
   "grade": "Quelle note allez-vous obtenir pour ce projet?",
-  "good": "Très probablement un 19 sur 20, mais un 20 est également bon."
+  "good": "Très probablement un 19 sur 20, mais un 20 est également bon.",
+
+  "choose_country": "Choisissez un pays"
 }

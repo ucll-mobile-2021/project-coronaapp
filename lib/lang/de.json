@@ -83,5 +83,7 @@
   "advice": "Wird der Rat als medizinisch anerkannt angesehen?",
   "school_project": "Nein, das ist ein verd*mmtes Schulprojekt, du Idiot.",
   "grade": "Welche Note bekommst du für dieses Projekt?",
-  "good": "Höchstwahrscheinlich eine 19 von 20, aber eine 20 ist auch gut."
+  "good": "Höchstwahrscheinlich eine 19 von 20, aber eine 20 ist auch gut.",
+
+  "choose_country": "Wähle ein Land"
 }
