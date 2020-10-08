@@ -1,15 +1,15 @@
 class CoronaStatistics {
-  final int confirmedcases;
-  final int deathcases;
-  final int recovered;
+  final String confirmedcases;
+  final String deathcases;
+  final String recovered;
 
   CoronaStatistics({this.confirmedcases, this.deathcases, this.recovered});
 
   factory CoronaStatistics.fromJson(Map<String, dynamic> json){
     return CoronaStatistics(
-    confirmedcases: json['confirmed'],
-    deathcases: json['deaths'],
-    recovered: json['recovered'],
+      confirmedcases: json['confirmed'].toString(),
+      deathcases: json['deaths'].toString(),
+      recovered: json['recovered'].toString(),
     );
   }
 }
