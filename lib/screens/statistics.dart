@@ -17,7 +17,11 @@ class StatisticsScreen extends StatefulWidget {
 Future<CoronaStatistics> fetchPost(String code) async {
   if (code == null) throw Exception("Code is null"); //todo
   if (code == "") code = "BE.Belgium.+32"; // todo eerste call (in _statisticsScreenState) met lege parameter
-  final response = await http.get("https://covid19-stats-api.herokuapp.com/api/v1/cases?country=" + code.split(".")[1]); //" + country); // TODO select land
+  else print("fetch code: " + code); // todo if usa -> get us // anders geeft
+  String thisCode = code.split(".")[1];
+  if (thisCode == "United States") thisCode = "US"; // todo om us te zien
+  // todo aland islands, american samoa, anguilla, antarctica, aruba, bermuda, bolivia, british indian ocean, brunei,
+  final response = await http.get("https://covid19-stats-api.herokuapp.com/api/v1/cases?country=" + thisCode); //" + country); // TODO select land
 
   if (response.statusCode == 200)  return CoronaStatistics.fromJson(json.decode(response.body));
   //else return CoronaStatistics.fromJson(json.decode('{"confirmed":"???","deaths":"???","recovered":"???"}')); //throw Exception("Failed to load the post, try again later"); // TODO TRANSLATE
@@ -66,7 +70,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                     snapshot.data.deathcases.toString() +
                     getTranslated(context, 'recovered') +
                     snapshot.data.recovered.toString());
-              else if (snapshot.hasError) print("snapshot has error");
+              else if (snapshot.hasError) print("snapshot has error"); // todo wegdoen
               return CircularProgressIndicator();
             },
           )),
