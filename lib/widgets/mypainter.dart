@@ -41,7 +41,7 @@ class _SensorState extends State<Sensor> {
 
   _SensorState(this.screenSize) {
     initVars();
-    while (enemies.length < 50) {
+    while (enemies.length < 40) {
       spawnEnemy();
     }
   }
@@ -190,17 +190,17 @@ class _SensorState extends State<Sensor> {
               EnemyOval(36, enemies, Colors.green),
               EnemyOval(37, enemies, Colors.yellow),
               EnemyOval(38, enemies, Colors.orange),
-              EnemyOval(39, enemies, Colors.blue),
-              EnemyOval(40, enemies, Colors.purple),
-              EnemyOval(41, enemies, Colors.orange),
-              EnemyOval(42, enemies, Colors.yellow),
-              EnemyOval(43, enemies, Colors.red),
-              EnemyOval(44, enemies, Colors.green),
-              EnemyOval(45, enemies, Colors.orange),
-              EnemyOval(46, enemies, Colors.purple),
-              EnemyOval(47, enemies, Colors.blue),
-              EnemyOval(48, enemies, Colors.red),
-              EnemyOval(49, enemies, Colors.green),
+              // EnemyOval(39, enemies, Colors.blue),
+              // EnemyOval(40, enemies, Colors.purple),
+              // EnemyOval(41, enemies, Colors.orange),
+              // EnemyOval(42, enemies, Colors.yellow),
+              // EnemyOval(43, enemies, Colors.red),
+              // EnemyOval(44, enemies, Colors.green),
+              // EnemyOval(45, enemies, Colors.orange),
+              // EnemyOval(46, enemies, Colors.purple),
+              // EnemyOval(47, enemies, Colors.blue),
+              // EnemyOval(48, enemies, Colors.red),
+              // EnemyOval(49, enemies, Colors.green),
             ],
           ),
           Padding(

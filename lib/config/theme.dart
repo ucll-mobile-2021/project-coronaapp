@@ -22,13 +22,15 @@ class ThemeChanger with ChangeNotifier {
     Icon(
       Icons.wb_sunny,
       color: Colors.redAccent,
+      semanticLabel: "qsldfsdlmf", //todo sqldjfqmlskdjfmslkdjf,
     ) :
     Icon(
       Icons.brightness_3,
       color: Colors.grey[850],
+      semanticLabel: "qsldfsdlmf", //todo sqldjfqmlskdjfmslkdjf,
     );
 
   dynamic getLangColor() => (_themeData == ThemeData.dark()) ? Colors.red : Colors.grey[850];
 
-  String getThemeName() => (_themeData == ThemeData.dark()) ? "light_mode" : "dark_mode";
+  String getThemeName() => (_themeData == ThemeData.dark()) ? "dark_mode" : "light_mode" ;
 }

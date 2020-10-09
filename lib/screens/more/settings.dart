@@ -6,21 +6,20 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SettingsTab extends StatefulWidget {
-  // I18N Stateful
   @override
   _SettingsTabState createState() => _SettingsTabState();
 }
 
 class _SettingsTabState extends State<SettingsTab> {
   // ignore: unused_field
-  final GlobalKey<FormState> _key = GlobalKey<FormState>(); // I18N
+  final GlobalKey<FormState> _key = GlobalKey<FormState>();
+  bool toggleSwitch = false;
 
   // ignore: unused_element
   void _showSuccessDialog() {
     showTimePicker(context: context, initialTime: TimeOfDay.now());
   }
 
-  // I18N
   void _changeLanguage(Language language) async {
     Locale _temp = await setLocale(language.languageCode);
     CoronaApp.setLocale(context, _temp);
@@ -29,51 +28,60 @@ class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
     ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(getTranslated(context, 'settings')),
         backgroundColor: Colors.red,
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Text(getTranslated(context, _themeChanger.getThemeName())),
-            IconButton(
-              onPressed: () => _themeChanger.toggleTheme(),
-              icon: _themeChanger.getIcon(),
+      body: ListView(
+        padding: EdgeInsets.all(10),
+        children: [
+          SwitchListTile(
+            value: toggleSwitch,
+            title: Text(getTranslated(context, _themeChanger.getThemeName())),
+            onChanged: (value) {
+              _themeChanger.toggleTheme();
+              toggleSwitch = value;
+            },
+          ),
+          ListTile( title: DropdownButton<Language>(
+            hint: Text(getTranslated(context, 'change_lang')),
+            icon: Icon(
+              Icons.language,
+              color: _themeChanger.getLangColor(),
             ),
-            Text(getTranslated(context, 'change_lang')),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: DropdownButton(
-                onChanged: (Language language) {
-                  _changeLanguage(language);
-                },
-                underline: SizedBox(),
-                icon: Icon(
-                  Icons.language,
-                  color: _themeChanger.getLangColor(),
+            iconSize: 24,
+            elevation: 16,
+          // style: TextStyle(
+          //     color: Colors.deepPurple
+          // ),
+            underline: Container(
+              height: 0,
+            ),
+            onChanged: (Language language) {
+              setState(() {
+                _changeLanguage(language);
+              });
+            },
+            items: Language.languageList().map<DropdownMenuItem<Language>>((Language language) {
+              return DropdownMenuItem<Language>(
+                value: language,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Text(
+                      language.flag,
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(language.name)
+                  ],
                 ),
-                items: Language.languageList()
-                    .map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(
-                          value: lang,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: <Widget>[
-                              Text(
-                                lang.flag,
-                                style: TextStyle(fontSize: 30),
-                              ),
-                              Text(lang.name)
-                            ],
-                          ),
-                        ))
-                    .toList(),
-              ),
-            ),
-          ],
-        ),
-      ),
+              );
+            }).toList(),
+          ),),
+        ],
+      )
     );
   }
 }
