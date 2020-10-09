@@ -21,11 +21,8 @@ Future<CoronaStatistics> fetchPost(String code) async {
 
   String thisCode = code.split("%")[0];
   if (thisCode == "United States") thisCode = "US"; // todo om us te zien
-  else if (thisCode == "Bolivia, Plurinational State of") thisCode = "Bolivia"; // todo om us te zien
-  else if (thisCode == "Cape Verde") thisCode = "Cabo Verde"; // todo om us te zien
-  else if (thisCode == "Congo") thisCode = "Congo (Brazzaville)"; // todo congo of
-  print("tcode: " + thisCode); //todo wegdoen
-  // todo aland islands, american samoa, anguilla, antarctica, aruba, bermuda, british indian ocean, brunei, cayman islands, christmas islands, cocos, congo, republic congo, cook islands, czech republic, falkland islands, faroe islands, french guiana, french polynesia, gibraltar, greenland, guadeloupe, guam, guernsey, holy see, hong kong!!, iran, isle of man, jersey,
+  else if (thisCode == "Congo") thisCode = "Congo (Brazzaville)";
+  else if (thisCode == "Czech Republic") thisCode = "Czechia";
   final response = await http.get("https://covid19-stats-api.herokuapp.com/api/v1/cases?country=" + thisCode); //" + country); // TODO select land
 
   if (response.statusCode == 200)  return CoronaStatistics.fromJson(json.decode(response.body));

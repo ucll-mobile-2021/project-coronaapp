@@ -44,8 +44,8 @@ class Countries {
       ("Cuba%🇨🇺"),
       ("Curacao%🇨🇼 ------------------"),
       ("Cyprus%🇨🇾"),
-      ("Czech Republic%🇨🇿 -------------"), // Czechia ?
-      ("Congo%CD -------------------"), // todo flag
+      ("Czech Republic%🇨🇿"),
+      ("Congo%🇨🇩"),
       ("Denmark%🇩🇰"),
       ("Djibouti%🇩🇯"),
       ("Dominica%🇩🇲"),
