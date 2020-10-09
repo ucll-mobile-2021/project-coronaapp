@@ -3,7 +3,6 @@ import 'package:coronapp/screens/more/faq.dart';
 import 'package:coronapp/screens/more/game.dart';
 import 'package:coronapp/screens/more/help.dart';
 import 'package:coronapp/screens/more/info.dart';
-import 'package:coronapp/screens/more/notifications.dart';
 import 'package:coronapp/screens/more/settings.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
@@ -31,10 +30,10 @@ class _MoreScreenState extends State<MoreScreen> {
       "tab": FaqTab(),
     },
     {
-      "title": "notifications",
-      "icon": Icons.notifications,
-      "info": "change_notif",
-      "tab": NotificationsTab(),
+      "title": "game",
+      "icon": Icons.videogame_asset,
+      "info": "game_info",
+      "tab": GameTab(),
     },
     {
       "title": "settings",
@@ -47,12 +46,6 @@ class _MoreScreenState extends State<MoreScreen> {
       "icon": Icons.info,
       "info": "about",
       "tab": InfoTab(),
-    },
-    {
-      "title": "game",
-      "icon": Icons.videogame_asset,
-      "info": "game_info",
-      "tab": GameTab(),
     },
   ];
 

@@ -13,6 +13,7 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 2. [Screens](#Screens)
     - [Dashboard](#Dashboard)
     - [Statistics](#Statistics)
+    - [LatestNews](#LatestNews)
     - [Tips](#Tips)
     - [More](#More)
 3. [Extra](#Extra)
@@ -29,16 +30,22 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 - [X] (Random) Greeting
 - [X] Feeling sick? (call & website button)
 - [X] Reference to "Passenger Locator Form"
-- [ ] Latest news (only latest 5 articles from [here](https://www.info-coronavirus.be/en/news))
+
 ### Statistics
 - [X] GET: JSON from API
 - [ ] Beautiful tiles (cases, deaths and recovered from BE)
 - [ ] Graph
 - [ ] Extra information
+
+### LatestNews
+- [ ] GET: JSON from API
+- [ ] Extended news layout
+
 ### Tips
 - [X] Basic layout
 - [X] Extended tip layout
 - [ ] Around 8 tips
+
 ### More
 - [ ] Help
 - [X] FAQ
@@ -47,8 +54,8 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 - [X] Game (Using Sensor)
 
 ## Extra
-- [X] Internationalization (EN,BE,FR and DE)
-- [X] Dark mode
+- [X] Internationalization (4 languages)
+- [X] Light & Dark mode
 
 ## Disclaimer
 [link](https://nl.wikipedia.org/wiki/Regeringsformaties_Belgi%C3%AB_2019-2020)
