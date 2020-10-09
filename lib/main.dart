@@ -2,6 +2,7 @@
   Corona App
 */
 import 'package:coronapp/screens/dashboard.dart';
+import 'package:coronapp/screens/latestnews.dart';
 import 'package:coronapp/screens/more.dart';
 import 'package:coronapp/screens/statistics.dart';
 import 'package:coronapp/screens/tips.dart';
@@ -62,7 +63,7 @@ class MaterialAppWithTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Provider.of<ThemeChanger>(context); // TODO Theme parameter
+    final theme = Provider.of<ThemeChanger>(context);
 
     if (_locale == null)
       return Container(
@@ -117,6 +118,10 @@ class _BasicScreenState extends State<BasicScreen> {
       "screen": StatisticsScreen(),
     },
     {
+      "title": "latest_news",
+      "screen": LatestNewsScreen(),
+    },
+    {
       "title": "tips",
       "screen": TipsScreen(),
     },
@@ -137,29 +142,30 @@ class _BasicScreenState extends State<BasicScreen> {
         iconSize: 30,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard),
-              title: Text(
-                getTranslated(context, screens[_currentIndex]["title"]),
-              ),
-              backgroundColor: Colors.red),
+            icon: Icon(Icons.dashboard),
+            label: getTranslated(context, screens[_currentIndex]["title"]),
+            backgroundColor: Colors.red,
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.equalizer),
-              title: Text(
-                getTranslated(context, screens[_currentIndex]["title"]),
-              ),
-              backgroundColor: Colors.red),
+            icon: Icon(Icons.equalizer),
+            label: getTranslated(context, screens[_currentIndex]["title"]),
+            backgroundColor: Colors.red,
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.live_help),
-              title: Text(
-                getTranslated(context, screens[_currentIndex]["title"]),
-              ),
-              backgroundColor: Colors.red),
+            icon: Icon(Icons.article),
+            label: getTranslated(context, screens[_currentIndex]["title"]),
+            backgroundColor: Colors.red,
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.menu),
-              title: Text(
-                getTranslated(context, screens[_currentIndex]["title"]),
-              ),
-              backgroundColor: Colors.red),
+            icon: Icon(Icons.live_help),
+            label: getTranslated(context, screens[_currentIndex]["title"]),
+            backgroundColor: Colors.red,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            label: getTranslated(context, screens[_currentIndex]["title"]),
+            backgroundColor: Colors.red,
+          ),
         ],
         onTap: (index) {
           setState(() {

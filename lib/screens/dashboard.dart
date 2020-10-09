@@ -1,5 +1,4 @@
 import 'package:coronapp/localization/translation.dart';
-import 'package:coronapp/screens/dashboard/latestnews.dart';
 import 'package:coronapp/type/greeting.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
@@ -172,7 +171,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
           _greetingMessage(),
           _feelingSickSection(),
           _passengerLocatorForm(),
-          LatestNews(),
         ],
       ),
     );

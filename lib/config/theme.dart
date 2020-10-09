@@ -9,7 +9,7 @@ class ThemeChanger with ChangeNotifier {
   getTheme() => _themeData;
 
   toggleTheme() {
-    if (_themeData == ThemeData.dark()) _themeData = ThemeData.light(); // TODO eigen dark theme
+    if (_themeData == ThemeData.dark()) _themeData = ThemeData.light();
     else _themeData = ThemeData.dark();
     notifyListeners();
   }

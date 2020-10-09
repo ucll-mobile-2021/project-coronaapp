@@ -50,7 +50,7 @@ class _MoreScreenState extends State<MoreScreen> {
     },
     {
       "title": "game",
-      "icon": Icons.arrow_forward_ios_rounded,
+      "icon": Icons.videogame_asset,
       "info": "game_info",
       "tab": GameTab(),
     },
