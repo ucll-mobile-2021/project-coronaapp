@@ -11,14 +11,7 @@ class SettingsTab extends StatefulWidget {
 }
 
 class _SettingsTabState extends State<SettingsTab> {
-  // ignore: unused_field
-  final GlobalKey<FormState> _key = GlobalKey<FormState>();
-  bool toggleSwitch = false;
-
-  // ignore: unused_element
-  void _showSuccessDialog() {
-    showTimePicker(context: context, initialTime: TimeOfDay.now());
-  }
+  bool _darkmode = false;
 
   void _changeLanguage(Language language) async {
     Locale _temp = await setLocale(language.languageCode);
@@ -28,7 +21,11 @@ class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
     ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
-
+    if (_themeChanger.getTheme() == ThemeData.dark()) {
+      setState(() {
+        _darkmode = true;
+      });
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text(getTranslated(context, 'settings')),
@@ -38,50 +35,54 @@ class _SettingsTabState extends State<SettingsTab> {
         padding: EdgeInsets.all(10),
         children: [
           SwitchListTile(
-            value: toggleSwitch,
-            title: Text(getTranslated(context, _themeChanger.getThemeName())),
-            onChanged: (value) {
+            value: _darkmode,
+            title: Text(getTranslated(context, "dark_mode")),
+            secondary: Icon(Icons.brightness_3),
+            activeColor: Colors.white,
+            activeTrackColor: Colors.red,
+            inactiveTrackColor: Colors.red,
+            onChanged: (newvalue) {
               _themeChanger.toggleTheme();
-              toggleSwitch = value;
+              _darkmode = newvalue;
             },
           ),
-          ListTile( title: DropdownButton<Language>(
-            hint: Text(getTranslated(context, 'change_lang')),
-            icon: Icon(
-              Icons.language,
-              color: _themeChanger.getLangColor(),
+          ListTile(
+            title: DropdownButton<Language>(
+              hint: Text(getTranslated(context, 'change_lang')),
+              icon: Icon(
+                Icons.language,
+                color: _themeChanger.getLangColor(),
+              ),
+              iconSize: 24,
+              elevation: 16,
+              underline: Container(
+                height: 0,
+              ),
+              onChanged: (Language language) {
+                setState(() {
+                  _changeLanguage(language);
+                });
+              },
+              items: Language.languageList()
+                  .map<DropdownMenuItem<Language>>((Language language) {
+                return DropdownMenuItem<Language>(
+                  value: language,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        language.flag,
+                        style: TextStyle(fontSize: 30),
+                      ),
+                      Text(language.name)
+                    ],
+                  ),
+                );
+              }).toList(),
             ),
-            iconSize: 24,
-            elevation: 16,
-          // style: TextStyle(
-          //     color: Colors.deepPurple
-          // ),
-            underline: Container(
-              height: 0,
-            ),
-            onChanged: (Language language) {
-              setState(() {
-                _changeLanguage(language);
-              });
-            },
-            items: Language.languageList().map<DropdownMenuItem<Language>>((Language language) {
-              return DropdownMenuItem<Language>(
-                value: language,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Text(
-                      language.flag,
-                      style: TextStyle(fontSize: 30),
-                    ),
-                    Text(language.name)
-                  ],
-                ),
-              );
-            }).toList(),
-          ),),
+          ),
         ],
-      )
+      ),
     );
   }
 }
