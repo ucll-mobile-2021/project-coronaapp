@@ -142,27 +142,42 @@ class _BasicScreenState extends State<BasicScreen> {
         iconSize: 30,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
+            icon: Icon(
+              Icons.dashboard,
+              color: Colors.white,
+            ),
             label: getTranslated(context, screens[_currentIndex]["title"]),
             backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.equalizer),
+            icon: Icon(
+              Icons.equalizer,
+              color: Colors.white,
+            ),
             label: getTranslated(context, screens[_currentIndex]["title"]),
             backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.article),
+            icon: Icon(
+              Icons.article,
+              color: Colors.white,
+            ),
             label: getTranslated(context, screens[_currentIndex]["title"]),
             backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.live_help),
+            icon: Icon(
+              Icons.live_help,
+              color: Colors.white,
+            ),
             label: getTranslated(context, screens[_currentIndex]["title"]),
             backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+            ),
             label: getTranslated(context, screens[_currentIndex]["title"]),
             backgroundColor: Colors.red,
           ),
