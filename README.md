@@ -5,9 +5,6 @@
 ## Overview
 Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven Limburg, commissioned by Mister F. Vogels
 
-## Google docs
-[Google Docs](https://docs.google.com/document/d/1ZcWHinmR31_1C4Sn5ZkiBSRSL_K1S2E2_ueMW-WkAWY/edit?usp=sharing)
-
 ## Table of Contents
 1. [Team](#Team)
 2. [Screens](#Screens)
@@ -32,26 +29,25 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 - [X] Reference to "Passenger Locator Form"
 
 ### Statistics
-- [X] GET: JSON from API
-- [ ] Beautiful tiles (cases, deaths and recovered from BE)
+- [X] GET JSON from API
+- [X] Tiles with data
 - [ ] Graph
 - [ ] Extra information
 
 ### LatestNews
-- [ ] GET: JSON from API
+- [ ] GET JSON from API
 - [ ] Extended news layout
 
 ### Tips
 - [X] Basic layout
 - [X] Extended tip layout
-- [ ] Around 8 tips
 
 ### More
 - [ ] Help
 - [X] FAQ
+- [X] Game (Using Sensor)
 - [ ] Settings
 - [X] Info
-- [X] Game (Using Sensor)
 
 ## Extra
 - [X] Internationalization (4 languages)
