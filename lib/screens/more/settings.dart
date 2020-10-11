@@ -39,8 +39,6 @@ class _SettingsTabState extends State<SettingsTab> {
             title: Text(getTranslated(context, "dark_mode")),
             secondary: Icon(Icons.brightness_3),
             activeColor: Colors.white,
-            activeTrackColor: Colors.red,
-            inactiveTrackColor: Colors.red,
             onChanged: (newvalue) {
               _themeChanger.toggleTheme();
               _darkmode = newvalue;
