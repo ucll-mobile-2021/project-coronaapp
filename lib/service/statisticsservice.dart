@@ -26,5 +26,6 @@ class StatisticsService {
         new Country("Germany", "Germany", "🇩🇪"),
         new Country("US", "United States", "🇺🇸"),
         new Country("China", "China", "🇨🇳"),
+        new Country("Bosnia and Herzegovina", "Bosnia and Herzegovina", "🇧🇦"),
       ];
 }
