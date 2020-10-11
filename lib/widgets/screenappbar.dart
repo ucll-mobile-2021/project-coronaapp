@@ -1,4 +1,3 @@
-import 'package:coronapp/config/styles.dart';
 import 'package:coronapp/config/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,16 +18,35 @@ class ScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
 
+    Color getBackgroundColor(ThemeChanger themeChanger) {
+      if (themeChanger.getTheme() == ThemeData.light()) {
+        return Colors.white10;
+      } else {
+        return Colors.grey[850];
+      }
+    }
+
+    Color getTextColor(ThemeChanger themeChanger) {
+      if (themeChanger.getTheme() == ThemeData.light()) {
+        return Colors.black;
+      } else {
+        return Colors.white;
+      }
+    }
+
     return ChangeNotifierProvider<ThemeChanger>(
-      create: (_) => ThemeChanger(
-        ThemeData.light(),
-      ), // Bij app openen is mode eerst op light
+      create: (_) => ThemeChanger(ThemeData.light()),
       child: new AppBar(
         brightness: _themeChanger.getBrightness(),
-        backgroundColor: _themeChanger.themeColors(),
+        backgroundColor: getBackgroundColor(_themeChanger),
+        elevation: 0.0,
         title: Text(
           titleOfScreen,
-          style: Styles.styleMainTitle,
+          style: TextStyle(
+            color: getTextColor(_themeChanger),
+            fontSize: 27.0,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
