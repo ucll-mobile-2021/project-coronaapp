@@ -26,9 +26,9 @@
   "dashboard": "Instrumententafel",
   "more": "Mehr",
   "statistics": "Statistiken",
-  "confirmed": "Bestätigte Fälle: ",
-  "deaths": "\nTodesfälle: ",
-  "recovered": "\nWiederhergestellt: ",
+  "confirmed": "Bestätigte",
+  "deaths": "Todes",
+  "recovered": "Wiederhergestellt",
   "marko_kliitzak": "Marko ist eine kranke Schlampe",
 
   "name": "Name",

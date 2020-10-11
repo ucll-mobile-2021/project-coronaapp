@@ -26,9 +26,9 @@
   "dashboard": "Dashboard",
   "more": "Meer",
   "statistics": "Statistieken",
-  "confirmed": "Bevestigde gevallen: ",
-  "deaths": "\nDoden: ",
-  "recovered": "\nHersteld: ",
+  "confirmed": "Bevestigd",
+  "deaths": "Doden",
+  "recovered": "Hersteld",
   "marko_kliitzak": "Marko is een zieke kliitzak",
 
   "name": "Naam",

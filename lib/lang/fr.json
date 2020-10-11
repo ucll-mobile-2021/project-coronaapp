@@ -26,9 +26,9 @@
   "dashboard": "Tableau",
   "more": "Plus",
   "statistics": "Statistiques",
-  "confirmed": "Cas confirmés\n: ",
-  "deaths": "\nMorts: ",
-  "recovered": "\nRétablis: ",
+  "confirmed": "Confirmés",
+  "deaths": "Morts",
+  "recovered": "Rétablis",
   "marko_kliitzak": "Marko est un sale cinnard",
 
   "name": "Nom",

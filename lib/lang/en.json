@@ -26,9 +26,9 @@
   "dashboard": "Dashboard",
   "more": "More",
   "statistics": "Statistics",
-  "confirmed": "Confirmed Cases: ",
-  "deaths": "\nDeaths: ",
-  "recovered": "\nRecovered: ",
+  "confirmed": "Confirmed",
+  "deaths": "Deaths",
+  "recovered": "Recovered",
   "marko_kliitzak": "Marko is a sick bitch",
 
   "name": "Name",
