@@ -1,3 +1,4 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:coronapp/widgets/mypainter.dart';
 import 'package:flutter/material.dart';
 
@@ -9,27 +10,17 @@ class GameTab extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Game'),
+        title: Text(getTranslated(context, 'Game')),
         backgroundColor: Colors.red,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.of(context).pop(); // todo go back
-            sensor.stop(); // todo om spel te stoppen
+            Navigator.of(context).pop(); /// go back
+            sensor.stop(); /// om spel te stoppen
           },
         ),
       ),
-      body: sensor, /*SafeArea( // todo use painter somewhere
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              CustomPaint(
-                painter: ShapePainter(10, 20, 30), // todo zo maken we shapepainter
-                child: Container(),
-              )
-          ],
-        ),
-      ),*/
+      body: sensor,
     );
   }
 }

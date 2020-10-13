@@ -26,11 +26,9 @@ class _LatestNewsScreenState extends State<LatestNewsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ScreenAppBar(getTranslated(
-        context,
-        'latest_news',
-        style: Styles.navBarTitle,
-      )),
+      appBar: ScreenAppBar(getTranslated(context, 'latest_news',
+        style: Styles.navBarTitle),
+      ),
       body: ListView.builder(
           itemCount: this.items.length, itemBuilder: _listViewItemBuilder),
     );
