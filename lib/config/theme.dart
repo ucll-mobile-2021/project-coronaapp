@@ -16,21 +16,15 @@ class ThemeChanger with ChangeNotifier {
 
   Brightness getBrightness() => (_themeData == ThemeData.dark()) ? Brightness.light : Brightness.dark;
 
-  dynamic themeColors() => (_themeData == ThemeData.dark()) ? Colors.grey[850] : Colors.red;
+  dynamic themeColors() => (_themeData == ThemeData.dark()) ? Colors.white : Colors.grey[850];
 
   Icon getIcon() => (_themeData == ThemeData.dark()) ?
     Icon(
-      Icons.wb_sunny,
-      color: Colors.redAccent,
-      semanticLabel: "qsldfsdlmf", //todo sqldjfqmlskdjfmslkdjf,
+      Icons.brightness_3,
     ) :
     Icon(
-      Icons.brightness_3,
-      color: Colors.grey[850],
-      semanticLabel: "qsldfsdlmf", //todo sqldjfqmlskdjfmslkdjf,
+      Icons.wb_sunny,
     );
-
-  dynamic getLangColor() => (_themeData == ThemeData.dark()) ? Colors.red : Colors.grey[850];
 
   String getThemeName() => (_themeData == ThemeData.dark()) ? "dark_mode" : "light_mode" ;
 }

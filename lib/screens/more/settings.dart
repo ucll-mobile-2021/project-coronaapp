@@ -37,21 +37,16 @@ class _SettingsTabState extends State<SettingsTab> {
           SwitchListTile(
             value: _darkmode,
             title: Text(getTranslated(context, "dark_mode")),
-            secondary: Icon(Icons.brightness_3),
+            secondary: _themeChanger.getIcon(),
             activeColor: Colors.white,
-            onChanged: (newvalue) {
+            onChanged: (value) {
               _themeChanger.toggleTheme();
-              _darkmode = newvalue;
+              _darkmode = value;
             },
           ),
           ListTile(
             title: DropdownButton<Language>(
-              hint: Text(getTranslated(context, 'change_lang')),
-              icon: Icon(
-                Icons.language,
-                color: _themeChanger.getLangColor(),
-              ),
-              iconSize: 24,
+              hint: Text(getTranslated(context, 'change_lang'), style: TextStyle(color: _themeChanger.themeColors())),
               elevation: 16,
               underline: Container(
                 height: 0,
@@ -61,8 +56,7 @@ class _SettingsTabState extends State<SettingsTab> {
                   _changeLanguage(language);
                 });
               },
-              items: Language.languageList()
-                  .map<DropdownMenuItem<Language>>((Language language) {
+              items: Language.languageList().map<DropdownMenuItem<Language>>((Language language) {
                 return DropdownMenuItem<Language>(
                   value: language,
                   child: Row(
@@ -77,6 +71,9 @@ class _SettingsTabState extends State<SettingsTab> {
                   ),
                 );
               }).toList(),
+            ),
+            leading: Icon(
+              Icons.language,
             ),
           ),
         ],
