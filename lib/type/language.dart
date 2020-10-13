@@ -1,8 +1,8 @@
 class Language {
   final int id;
-  final String name, flag, languageCode;
+  final String flag, name, languageCode;
 
-  Language(this.id, this.name, this.flag, this.languageCode);
+  Language(this.id, this.flag, this.name, this.languageCode);
 
   static List<Language> languageList() {
     return <Language>[ // https://flagpedia.net/emoji
