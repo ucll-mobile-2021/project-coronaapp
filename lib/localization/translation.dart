@@ -2,7 +2,7 @@ import 'package:coronapp/localization/localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-String getTranslated(BuildContext context, String key) =>
+String getTranslated(BuildContext context, String key, {TextStyle style}) =>
     Localization.of(context).getTranslatedValue(key);
 
 const String ENGLISH = 'en';
