@@ -1,6 +1,6 @@
 import 'package:coronapp/localization/translation.dart';
-import 'package:coronapp/screens/news_info.dart';
-import 'package:coronapp/screens/styles.dart';
+import 'package:coronapp/screens/latestnews/news_info.dart';
+import 'package:coronapp/screens/latestnews/styles.dart';
 import 'package:coronapp/type/new_detail.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
