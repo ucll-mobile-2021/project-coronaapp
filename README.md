@@ -41,9 +41,9 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 - [X] Available countries (:belgium:, :netherlands:, :uk:, :luxembourg:, :fr:, :de:, :us:, :cn:, :bosnia_herzegovina:, ... with possibility of expansion)
 
 ### LatestNews
-- [ ] GET JSON from API
-- [ ] List with news items
-- [ ] Extended news item
+- [X] GET JSON from API
+- [X] List with news items
+- [X] Extended news item
 
 ### Tips
 - [X] List with tip items
