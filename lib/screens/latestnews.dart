@@ -68,6 +68,7 @@ class _LatestNewsScreenState extends State<LatestNewsScreen> {
     final http.Response response = await http.get(
         "http://newsapi.org/v2/everything?q=Covid&from=2020-10-13&sortBy=popularity&apiKey=58e9f0e68be647bf965f6b601721de3b");
     //https://newsapi.org/v2/top-headlines?country=be&apiKey=58e9f0e68be647bf965f6b601721de3b
+    //change key monthly
 
     final Map<String, dynamic> responseData = json.decode(response.body);
     responseData['articles'].forEach((newsDetail) {
