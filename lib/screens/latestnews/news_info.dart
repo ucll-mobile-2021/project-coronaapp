@@ -11,10 +11,12 @@ class NewsInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text(
-          newsDetail.title,
-          style: Styles.navBarTitle,
-        )),
+          title: Text(
+            newsDetail.title,
+            style: Styles.navBarTitle,
+          ),
+          backgroundColor: Colors.red,
+        ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
