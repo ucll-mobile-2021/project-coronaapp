@@ -51,7 +51,7 @@ class _TipsScreenState extends State<TipsScreen> {
       "contact_general_practitioner",
       "contacting_doctor",
       "genprac.jpg",
-      "genprac_2.png",
+      "genprac_2.jpg",
     )
   ];
 
