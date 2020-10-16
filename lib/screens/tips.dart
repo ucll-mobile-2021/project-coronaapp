@@ -52,6 +52,12 @@ class _TipsScreenState extends State<TipsScreen> {
       "contacting_doctor",
       "genprac.jpg",
       "genprac_2.jpg",
+    ),
+        new Tip(
+      "pasop_oudemensen_infectie",
+      "pasop_oudemensen",
+      "oudemensen.jpg",
+      "oudemensen_2.jpg",
     )
   ];
 
