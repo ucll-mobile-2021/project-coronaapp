@@ -46,6 +46,12 @@ class _TipsScreenState extends State<TipsScreen> {
       "sneezing",
       "sneezeelbow.png",
       "sneezeelbow_2.png",
+    ),
+    new Tip(
+      "contact_general_practitioner",
+      "contacting_doctor",
+      "genprac.jpg",
+      "genprac_2.png",
     )
   ];
 
