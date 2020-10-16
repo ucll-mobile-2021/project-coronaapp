@@ -10,7 +10,7 @@ class GameTab extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(getTranslated(context, 'Game')),
+        title: Text(getTranslated(context, 'game')),
         backgroundColor: Colors.red,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
