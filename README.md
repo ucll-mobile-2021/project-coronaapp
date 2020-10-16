@@ -48,7 +48,7 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 ### Tips
 - [X] List with tip items
 - [X] Extended tip item
-- [ ] Total tips: +-8
+- [X] Total tips: 8
 
 ### More
 - [ ] Help
@@ -66,7 +66,7 @@ Statistics screen uses the [COVID 19 Stats API](https://covid19-stats-api.heroku
 
 ### News-API
 Latest news screen uses the [News API](https://newsapi.org/) 
-- Free (for developers) 
+- Free (for developers) **only for 1 month**
 - 500 requests/day
 
 ## Extra
