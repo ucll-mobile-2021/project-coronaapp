@@ -52,6 +52,8 @@
   "most_sick": "Die meisten Menschen mit COVID-19 haben eine leichte Krankheit und können sich ohne medizinische Versorgung zu Hause erholen. Verlassen Sie Ihr Zuhause nur, um medizinische Versorgung zu erhalten. Besuchen Sie keine öffentlichen Bereiche.",
   "sneeze_cough": "Niesen und husten Sie in Ihren Ellbogen",
   "sneezing": "Beim Niesen spritzen alle Körperflüssigkeiten in einem Radius von einer Meile herum. Besuchen Sie keine öffentlichen Bereiche.",
+  "contact_general_practitioner":"Wenden Sie sich an Ihren Hausarzt",
+  "contacting_doctor":"Wenden Sie sich an Ihren Hausarzt, wenn Sie Fieber, Husten und Atembeschwerden entwickeln.",
 
   "faq": "FAQ",
   "call_911": "Ruf 112 an ... oh warte, tu das nicht",

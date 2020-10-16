@@ -52,6 +52,8 @@
   "most_sick": "Most people with COVID-19 have mild illness and can recover at home without medical care. Do not leave your home, except to get medical care. Do not visit public areas.",
   "sneeze_cough": "Sneeze and cough into your elbow",
   "sneezing": "When sneezing all your body fluids spatter around in a one-mile radius. Do not visit public areas.",
+  "contact_general_practitioner":"Contact your general practitioner",
+  "contacting_doctor":"Contact your general practitioner if you develop a fever, cough, and difficult breathing.",
 
   "faq": "FAQ",
   "call_911": "Call 911... oh wait don't do that",
