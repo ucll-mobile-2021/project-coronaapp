@@ -34,7 +34,8 @@ class NewsInfo extends StatelessWidget {
   List<Widget> _renderInfo(BuildContext context, NewsDetail newsDetail) {
     var result = List<Widget>();
     result.add(_sectionTitle(newsDetail.title));
-    result.add(_sectionText(newsDetail.description));
+    result.add(_sectionText(newsDetail.description));    
+    result.add(_sectionText("OPEN ARTICLE"));
     return result;
   }
 
@@ -50,7 +51,7 @@ class NewsInfo extends StatelessWidget {
         padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
         child: Text(
           text,
-          style: Styles.textDefault,
+          style: Styles.textDefault,          
         ));
   }
 
