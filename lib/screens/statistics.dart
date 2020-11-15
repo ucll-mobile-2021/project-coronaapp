@@ -4,6 +4,7 @@ import 'package:coronapp/type/country.dart';
 import 'package:coronapp/type/countrystat.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
+import 'package:pie_chart/pie_chart.dart';
 
 class StatisticsScreen extends StatefulWidget {
   @override
@@ -18,8 +19,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   _StatisticsScreenState() {
     this._service = new StatisticsService();
     this._countries = this._service.getCountries();
-    if (_selectedCountry == null)
-      this._selectedCountry = _countries.elementAt(0);
+    if (_selectedCountry == null) this._selectedCountry = _countries.elementAt(0);
   }
 
   Widget _showStats(CountryStat stats) {
@@ -43,6 +43,21 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
       fontWeight: FontWeight.bold,
       fontSize: 23.0,
     );
+
+    double total = (double.parse(stats.getConfirmedCases()) / 2) + (double.parse(stats.getDeathCases()) / 2) + double.parse(stats.getRecovered());
+    Map<String, double> data = new Map();
+      data.addAll({
+        getTranslated(context, 'confirmed'): (double.parse(stats.getConfirmedCases()) / total) * 50, // maal 50 om te delen door 2
+        getTranslated(context, 'deaths'): (double.parse(stats.getDeathCases()) / total) * 50,
+        getTranslated(context, 'recovered'): (double.parse(stats.getRecovered()) / total) * 100,
+      });
+
+    List<Color> _colors = [
+      Colors.red,
+      Colors.blueAccent,
+      Colors.amberAccent,
+      Colors.teal
+    ];
 
     return Column(
       children: [
@@ -114,7 +129,25 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             ),
           ],
         ),
-      ],
+        PieChart(
+          dataMap: data,
+          colorList: _colors, // if not declared, random colors will be chosen
+          animationDuration: Duration(milliseconds: 1500),
+          chartLegendSpacing: 32.0,
+          chartRadius: MediaQuery.of(context).size.width / 2.7, //determines the size of the chart
+          showChartValuesInPercentage: true,
+          showChartValues: true,
+          showChartValuesOutside: true,
+          chartValueBackgroundColor: Colors.grey[200],
+          showLegends: true,
+          legendPosition: LegendPosition.right, //can be changed to top, left, bottom, right
+          decimalPlaces: 1,
+          showChartValueLabel: true,
+          initialAngle: 0,
+          chartValueStyle: defaultChartValueStyle.copyWith(color: Colors.blueGrey[900].withOpacity(0.9),),
+          chartType: ChartType.disc, //can be changed to ChartType.ring
+        ),
+      ]
     );
   }
 
