@@ -89,5 +89,11 @@
   "grade": "What grade are you going to get for this project?",
   "good": "Most likely a 19 out of 20, but a 20 is also good.",
 
-  "choose_country": "Choose a country"
+  "choose_country": "Choose a country",
+
+  "English": "English",
+  "French": "French",
+  "German": "German",
+  "Dutch": "Dutch"
+}
 }

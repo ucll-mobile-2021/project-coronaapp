@@ -63,7 +63,7 @@ class _SettingsTabState extends State<SettingsTab> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
-                        language.flag + " " + language.name,
+                        language.flag + " " + getTranslated(context, language.name),
                         style: TextStyle(fontSize: 30, wordSpacing: 15),
                       ),
                     ],

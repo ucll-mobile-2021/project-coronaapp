@@ -89,5 +89,10 @@
   "grade": "Quelle note allez-vous obtenir pour ce projet?",
   "good": "Très probablement un 19 sur 20, mais un 20 est également bon.",
 
-  "choose_country": "Choisissez un pays"
+  "choose_country": "Choisissez un pays",
+
+  "English": "Anglais",
+  "French": "Français",
+  "German": "Allemand",
+  "Dutch": "Néerlandais"
 }

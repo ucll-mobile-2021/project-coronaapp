@@ -88,5 +88,10 @@
   "grade": "Welk cijfer ga je halen voor dit project?",
   "good": "Most likely a 19 out of 20, but a 20 is also good.",
 
-  "choose_country": "Kies een land"
+  "choose_country": "Kies een land",
+
+  "English": "Engels",
+  "French": "Frans",
+  "German": "Duits",
+  "Dutch": "Nederlands"
 }
