@@ -26,8 +26,8 @@ class _LatestNewsScreenState extends State<LatestNewsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ScreenAppBar(getTranslated(context, 'latest_news',
-        style: Styles.navBarTitle),
+      appBar: ScreenAppBar(
+        getTranslated(context, 'latest_news', style: Styles.navBarTitle),
       ),
       body: ListView.builder(
           itemCount: this.items.length, itemBuilder: _listViewItemBuilder),
@@ -65,11 +65,12 @@ class _LatestNewsScreenState extends State<LatestNewsScreen> {
   }
 
   void getNews() async {
-    final http.Response response = await http.get(
-        "http://newsapi.org/v2/everything?q=Covid&from=2020-10-13&sortBy=popularity&apiKey=58e9f0e68be647bf965f6b601721de3b");
-    //https://newsapi.org/v2/top-headlines?country=be&apiKey=58e9f0e68be647bf965f6b601721de3b
-    //change key monthly
-
+    // https://newsapi.org/
+    final apikey = "73dd237980f14041b2f33f3317df76c2";
+    final url =
+        "http://newsapi.org/v2/everything?q=Covid&from=2020-11-1&sortBy=popularity&apiKey=" +
+            apikey;
+    final http.Response response = await http.get(url);
     final Map<String, dynamic> responseData = json.decode(response.body);
     responseData['articles'].forEach((newsDetail) {
       final NewsDetail news = NewsDetail(
