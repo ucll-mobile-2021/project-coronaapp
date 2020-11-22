@@ -16,26 +16,26 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 * [ ] Youtube video about COVID-19
 
 === Statistics
-* [X] GET JSON from API
-* [X] Tiles with data
-* [X] Available countries (:belgium:, :netherlands:, :uk:, :luxembourg:, :fr:, :de:, :us:, :cn:, :bosnia_herzegovina:, ... with possibility of expansion)
+* [x] GET JSON from API
+* [x] Tiles with data
+* [x] Available countries (:belgium:, :netherlands:, :uk:, :luxembourg:, :fr:, :de:, :us:, :cn:, :bosnia_herzegovina:, ... with possibility of expansion)
 
 === LatestNews
-* [X] GET JSON from API
-* [X] List with news items
-* [X] Extended news item
+* [x] GET JSON from API
+* [x] List with news items
+* [x] Extended news item
 
 === Tips
-* [X] List with tip items
-* [X] Extended tip item
-* [X] Total tips: 8
+* [x] List with tip items
+* [x] Extended tip item
+* [x] Total tips: 8
 
 === More
 * [ ] Help
-* [X] FAQ
-* [X] Game (Using Sensor)
-* [X] Settings
-* [X] Info
+* [x] FAQ
+* [x] Game (Using Sensor)
+* [x] Settings
+* [x] Info
 
 == APIs
 === COVID-19-Stats-API
@@ -49,8 +49,8 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 * 500 requests/day
 
 == Extra
-* [X] Internationalization (4 languages)
-* [X] Light & Dark mode
+* [x] Internationalization (4 languages)
+* [x] Light & Dark mode
 
 == Team
 |===
