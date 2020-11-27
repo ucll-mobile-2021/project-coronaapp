@@ -11,7 +11,7 @@
   "change_lang": "Change Language",
   "tips": "Tips",
 
-  "feeling_sick": "Are you feeling sick?",
+  "feeling_sick": "Are you feeling sick? \nMake sure to contact a docter",
   "symptoms": "If you have any COVID-19 related symptoms,",
   "local_practitioner": " please call your local general practitioner for advice.",
   "covid_url": "https://www.info-coronavirus.be/en/",
@@ -94,5 +94,7 @@
   "English": "English",
   "French": "French",
   "German": "German",
-  "Dutch": "Dutch"
+  "Dutch": "Dutch",
+
+  "corona_alertapp": "Download the official coronalert app here"
 }
