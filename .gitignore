@@ -45,3 +45,5 @@ app.*.map.json
 
 # For some reason pubspec.lock keeps changing its causing merge dinges
 #pubspec.lock
+
+.vs
