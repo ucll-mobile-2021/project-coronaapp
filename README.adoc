@@ -13,11 +13,11 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 * [ ] Reference to the official CoronAlert app
 ** https://play.google.com/store/apps/details?id=be.sciensano.coronalert)[Andriod]
 ** https://apps.apple.com/us/app/id1526431891)[IOS]
-* [ ] Youtube video about COVID-19
 
 === Statistics
 * [x] GET JSON from API
 * [x] Tiles with data
+* [X] Show world statistics
 * [x] Available countries (:belgium:, :netherlands:, :uk:, :luxembourg:, :fr:, :de:, :us:, :cn:, :bosnia_herzegovina:, ... with possibility of expansion)
 
 === LatestNews
@@ -37,20 +37,22 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 * [x] Settings
 * [x] Info
 
+== Extra
+* [x] Internationalization (4 languages)
+* [x] Light & Dark mode
+
 == APIs
 === COVID-19-Stats-API
-* Statistics screen uses the https://covid19-stats-api.herokuapp.com/[COVID 19 Stats API]
+* Statistics screen uses a random API
 * Free (for everyone)
 * Unlimited requests/day
+* https://github.com/javieraviles/covidAPI[Github]
+* https://coronavirus-19-api.herokuapp.com/[Website]
 
 === News-API
 * Latest news screen uses the https://newsapi.org/[News API]
 * Free (for developers) **only for 1 month**
 * 500 requests/day
-
-== Extra
-* [x] Internationalization (4 languages)
-* [x] Light & Dark mode
 
 == Team
 |===

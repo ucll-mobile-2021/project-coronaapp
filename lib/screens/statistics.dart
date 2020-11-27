@@ -14,158 +14,357 @@ class StatisticsScreen extends StatefulWidget {
 class _StatisticsScreenState extends State<StatisticsScreen> {
   Country _selectedCountry;
   StatisticsService _service;
-  List<Country> _countries;
+  List<Country> _countries = [
+    new Country("World", "Planet Earth", "🌎"),
+    new Country("Belgium", "Belgium", "🇧🇪"),
+    new Country("Netherlands", "Netherlands", "🇳🇱"),
+    new Country("UK", "United Kingdom", "🇬🇧"),
+    new Country("Luxembourg", "Luxembourg", "🇱🇺"),
+    new Country("France", "France", "🇫🇷"),
+    new Country("Germany", "Germany", "🇩🇪"),
+    new Country("Spain", "Spain", "🇪🇸"),
+    new Country("USA", "United States", "🇺🇸"),
+    new Country("China", "China", "🇨🇳"),
+    new Country("Bosnia and Herzegovina", "Bosnia and Herzegovina", "🇧🇦"),
+  ];
 
   _StatisticsScreenState() {
     this._service = new StatisticsService();
-    this._countries = this._service.getCountries();
     if (_selectedCountry == null)
       this._selectedCountry = _countries.elementAt(0);
   }
 
-  Widget _showStats(CountryStat stats) {
-    final double _height = 110;
-    final double _width = 110;
+  // Show the statistics of the world
+  Widget _showStatsOfTheEarth(CountryStat stats) {
+    Map<String, double> _data = new Map();
+    _data.addAll({
+      "Cases": stats.getCases().toDouble(),
+      "Recovered": stats.getRecovered().toDouble(),
+      "Deaths": stats.getDeaths().toDouble(),
+    });
 
-    final BoxDecoration _decoration = BoxDecoration(
-      color: Colors.red,
-      borderRadius: BorderRadius.all(
-        Radius.circular(10),
+    List<Color> _colors = [
+      Colors.green,
+      Colors.blueAccent,
+      Colors.red,
+    ];
+
+    return Padding(
+      padding: EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Column(
+                children: [
+                  Text(
+                    "Cases: " + stats.getCases().toString(),
+                    style: TextStyle(
+                      fontSize: 19.0,
+                    ),
+                  ),
+                  Text(
+                    "Deaths: " + stats.getDeaths().toString(),
+                    style: TextStyle(
+                      fontSize: 19.0,
+                    ),
+                  ),
+                  Text(
+                    "Recovered: " + stats.getRecovered().toString(),
+                    style: TextStyle(
+                      fontSize: 19.0,
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+          Row(
+            children: [
+              PieChart(
+                dataMap: _data,
+                colorList: _colors,
+                animationDuration: Duration(milliseconds: 1500),
+                chartLegendSpacing: 32.0,
+                chartRadius: MediaQuery.of(context).size.width / 2.7,
+                showChartValuesInPercentage: false,
+                showChartValues: true,
+                showChartValuesOutside: false,
+                chartValueBackgroundColor: Colors.grey[200],
+                showLegends: true,
+                legendPosition: LegendPosition.left,
+                decimalPlaces: 0,
+                showChartValueLabel: true,
+                initialAngle: 0,
+                chartValueStyle: defaultChartValueStyle.copyWith(
+                  color: Colors.blueGrey[900].withOpacity(0.9),
+                ),
+                chartType: ChartType.disc,
+              ),
+            ],
+          )
+        ],
       ),
     );
+  }
 
-    final TextStyle _styleTitle = TextStyle(
-      color: Colors.white,
-      fontSize: 20.3,
-    );
-
-    final TextStyle _styleNumber = TextStyle(
-      color: Colors.white,
-      fontWeight: FontWeight.bold,
-      fontSize: 23.0,
-    );
-
-    double total = (double.parse(stats.getConfirmedCases()) / 2) +
-        (double.parse(stats.getDeathCases()) / 2) +
-        double.parse(stats.getRecovered());
-    Map<String, double> data = new Map();
-    data.addAll({
-      getTranslated(context, 'confirmed'):
-          (double.parse(stats.getConfirmedCases()) / total) *
-              50, // maal 50 om te delen door 2
-      getTranslated(context, 'deaths'):
-          (double.parse(stats.getDeathCases()) / total) * 50,
-      getTranslated(context, 'recovered'):
-          (double.parse(stats.getRecovered()) / total) * 100,
+  // Show the statistics of a country
+  Widget _showStatsOfCountry(CountryStat stats) {
+    Map<String, double> _data = new Map();
+    _data.addAll({
+      "Cases": stats.getCases().toDouble(),
+      "Deaths": stats.getDeaths().toDouble(),
     });
 
     List<Color> _colors = [
       Colors.red,
-      Colors.blueAccent,
-      Colors.amberAccent,
-      Colors.teal
+      Colors.teal,
     ];
 
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            // Confirmed cases
-            Container(
-              height: _height,
-              width: _width,
-              decoration: _decoration,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      getTranslated(context, 'confirmed'),
-                      style: _styleTitle,
-                    ),
-                    Text(
-                      stats.getConfirmedCases(),
-                      style: _styleNumber,
-                    ),
-                  ],
-                ),
+    return Padding(
+      padding: EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Column(
+                children: [
+                  (() {
+                    if (stats.getCases() != 0) {
+                      return new Text(
+                        "Cases: " + stats.getCases().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Cases is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                  (() {
+                    if (stats.getDeaths() != 0) {
+                      return new Text(
+                        "Deaths: " + stats.getDeaths().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Deaths is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                  (() {
+                    if (stats.getRecovered() != 0) {
+                      return new Text(
+                        "Recovered: " + stats.getRecovered().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Recovered is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                  (() {
+                    if (stats.getActive() != 0) {
+                      return new Text(
+                        "Active: " + stats.getActive().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Active is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                  (() {
+                    if (stats.getCritical() != 0) {
+                      return new Text(
+                        "Critical: " + stats.getCritical().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Cases is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                  (() {
+                    if (stats.getTodayCases() != 0) {
+                      return new Text(
+                        "Today's cases: " + stats.getTodayCases().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Today's cases is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                  (() {
+                    if (stats.getTodayDeaths() != 0) {
+                      return new Text(
+                        "Today's deaths: " + stats.getTodayDeaths().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Today's deaths is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                  (() {
+                    if (stats.getCasesPerOneMillion() != 0) {
+                      return new Text(
+                        "Cases/Million: " +
+                            stats.getCasesPerOneMillion().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Cases/Million is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                  (() {
+                    if (stats.getDeathsPerOneMillion() != 0) {
+                      return new Text(
+                        "Deaths/Million: " +
+                            stats.getDeathsPerOneMillion().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Deaths/Million is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                  (() {
+                    if (stats.getTests() != 0) {
+                      return new Text(
+                        "Tests: " + stats.getTests().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                          "Tests is not available for this country");
+                    }
+                  }()),
+                  (() {
+                    if (stats.getTestsPerOneMillion() != 0) {
+                      return new Text(
+                        "Tests/Million: " +
+                            stats.getTestsPerOneMillion().toString(),
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    } else {
+                      return new Text(
+                        "Tests/Million is not available for this country",
+                        style: TextStyle(
+                          fontSize: 19.0,
+                        ),
+                      );
+                    }
+                  }()),
+                ],
               ),
-            ),
-            // Death Cases
-            Container(
-              height: _height,
-              width: _width,
-              decoration: _decoration,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      getTranslated(context, 'deaths'),
-                      style: _styleTitle,
+            ],
+          ),
+          Row(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  PieChart(
+                    dataMap: _data,
+                    colorList: _colors,
+                    animationDuration: Duration(milliseconds: 1500),
+                    chartLegendSpacing: 32.0,
+                    chartRadius: MediaQuery.of(context).size.width / 2.7,
+                    showChartValuesInPercentage: false,
+                    showChartValues: true,
+                    showChartValuesOutside: true,
+                    chartValueBackgroundColor: Colors.grey[200],
+                    showLegends: true,
+                    legendPosition: LegendPosition.left,
+                    decimalPlaces: 1,
+                    showChartValueLabel: true,
+                    initialAngle: 0,
+                    chartValueStyle: defaultChartValueStyle.copyWith(
+                      color: Colors.blueGrey[900].withOpacity(0.9),
                     ),
-                    Text(
-                      stats.getDeathCases(),
-                      style: _styleNumber,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            // Recovered cases
-            Container(
-              height: _height,
-              width: _width,
-              decoration: _decoration,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      getTranslated(context, 'recovered'),
-                      style: _styleTitle,
-                    ),
-                    Text(
-                      stats.getRecovered(),
-                      style: _styleNumber,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-        Row(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                PieChart(
-                  dataMap: data,
-                  colorList: _colors,
-                  animationDuration: Duration(milliseconds: 1500),
-                  chartLegendSpacing: 32.0,
-                  chartRadius: MediaQuery.of(context).size.width / 2.7,
-                  showChartValuesInPercentage: true,
-                  showChartValues: true,
-                  showChartValuesOutside: true,
-                  chartValueBackgroundColor: Colors.grey[200],
-                  showLegends: true,
-                  legendPosition: LegendPosition.right,
-                  decimalPlaces: 1,
-                  showChartValueLabel: true,
-                  initialAngle: 0,
-                  chartValueStyle: defaultChartValueStyle.copyWith(
-                    color: Colors.blueGrey[900].withOpacity(0.9),
+                    chartType: ChartType.disc,
                   ),
-                  chartType: ChartType.disc,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ],
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Show that the API is offline
+  Widget _showApiOffline() {
+    return Container(
+      child: Text("API offline"),
+    );
+  }
+
+  // Show that something went wrong
+  Widget _showSomethingWentWrong(String error) {
+    print("Something went wrong: " + error);
+    return Container(
+      child: Text("Something went wrong :(" + error),
     );
   }
 
@@ -203,11 +402,26 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             future: _service.getData(_selectedCountry.getCode()),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                // ignore: unnecessary_cast
-                return _showStats(snapshot.data as CountryStat);
+                // Getting data from API is done
+                CountryStat stats = snapshot.data;
+                if (stats.getCountry() == "API_OFFLINE")
+                  // API is offline
+                  return _showApiOffline();
+                else {
+                  // API is online and working great
+                  if (stats.getCountry() == "World") {
+                    // Show world stats
+                    return _showStatsOfTheEarth(stats);
+                  } else {
+                    // Show country stats
+                    return _showStatsOfCountry(stats);
+                  }
+                }
               } else if (snapshot.hasError) {
-                return Text("Snapshot error");
+                // Internal error
+                return _showSomethingWentWrong(snapshot.error.toString());
               }
+              // Still loading
               return CircularProgressIndicator();
             },
           ),
