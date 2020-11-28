@@ -1,6 +1,5 @@
 import 'package:coronapp/type/new_detail.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'styles.dart';
 
 class NewsInfo extends StatelessWidget {
@@ -37,7 +36,6 @@ class NewsInfo extends StatelessWidget {
     var result = List<Widget>();
     result.add(_sectionTitle(newsDetail.title));
     result.add(_sectionText(newsDetail.description));
-    result.add(_sectionButton(newsDetail.url));
     return result;
   }
 
@@ -62,24 +60,6 @@ class NewsInfo extends StatelessWidget {
     return Container(
       constraints: BoxConstraints.tightFor(height: height),
       child: Image.network(url, fit: BoxFit.fitWidth),
-    );
-  }
-
-  _launchURL() async {
-    String url = newsDetail.url;
-    if (await canLaunch(url))
-      await launch(url);
-    else
-      throw 'Could not launch $url';
-  }
-
-  Widget _sectionButton(String url) {
-    return Container(
-      child: FlatButton.icon(
-        label: Text("Open article"),
-        icon: Icon(Icons.info_outline),
-        onPressed: _launchURL,
-      ),
     );
   }
 }

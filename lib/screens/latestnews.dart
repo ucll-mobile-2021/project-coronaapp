@@ -30,7 +30,9 @@ class _LatestNewsScreenState extends State<LatestNewsScreen> {
         getTranslated(context, 'latest_news', style: Styles.navBarTitle),
       ),
       body: ListView.builder(
-          itemCount: this.items.length, itemBuilder: _listViewItemBuilder),
+        itemCount: this.items.length,
+        itemBuilder: _listViewItemBuilder,
+      ),
     );
   }
 
@@ -61,15 +63,20 @@ class _LatestNewsScreenState extends State<LatestNewsScreen> {
   }
 
   Widget _itemTitle(NewsDetail newsDetail) {
-    return Text(newsDetail.title, style: Styles.textDefault);
+    return Text(newsDetail.title);
   }
 
   void getNews() async {
     // https://newsapi.org/
     final apikey = "73dd237980f14041b2f33f3317df76c2";
-    final url =
-        "http://newsapi.org/v2/everything?q=Covid&from=2020-11-1&sortBy=popularity&apiKey=" +
-            apikey;
+    final fromdate = "2020-11-20";
+    final sortby = "popularity";
+    final url = "http://newsapi.org/v2/everything?q=Covid&from=" +
+        fromdate +
+        "&sortBy=" +
+        sortby +
+        "&apiKey=" +
+        apikey;
     final http.Response response = await http.get(url);
     final Map<String, dynamic> responseData = json.decode(response.body);
     responseData['articles'].forEach((newsDetail) {
