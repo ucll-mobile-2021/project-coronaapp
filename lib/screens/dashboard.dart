@@ -1,10 +1,9 @@
+import 'package:coronapp/config/theme.dart';
 import 'package:coronapp/localization/translation.dart';
-import 'package:coronapp/type/greeting.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart'; // uses dep url_launcher
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:provider/provider.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -12,26 +11,11 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-
-
-
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    SystemChrome.setEnabledSystemUIOverlays([]);
   }
 
-  // https://stackoverflow.com/questions/43149055/how-do-i-open-a-web-browser-url-from-my-flutter-code
-  _launchURL() async {
-    const url = 'https://www.info-coronavirus.be/nl/';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-  // https://stackoverflow.com/questions/43149073/how-can-i-dial-the-phone-from-flutter
   _launchCaller() async {
     const url = "tel:1234567";
     if (await canLaunch(url)) {
@@ -41,48 +25,44 @@ class _DashboardScreenState extends State<DashboardScreen> {
     }
   }
 
-
-  final Widget _feelingSickSection =
-     Container(
-      /*width: width,
-      height: height/3,*/
+  Widget _feelingSickSection(ThemeChanger themeChanger) {
+    return Container(
       padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-              topRight: Radius.circular(16),
-              topLeft: Radius.circular(16)
-          )
+        color: getBackgroundColor(themeChanger),
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(16),
+          topLeft: Radius.circular(16),
+        ),
       ),
     );
+  }
 
-  final Widget _formSection =
-  Container(
-    /*width: width,
-      height: height/3,*/
-    padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
-    decoration: BoxDecoration(
-        color: Colors.white,
+  Widget _formSection(ThemeChanger themeChanger) {
+    return Container(
+      padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+      decoration: BoxDecoration(
+        color: getBackgroundColor(themeChanger),
         borderRadius: BorderRadius.only(
-            topRight: Radius.circular(16),
-            topLeft: Radius.circular(16)
-        )
-    ),
-  );
+          topRight: Radius.circular(16),
+          topLeft: Radius.circular(16),
+        ),
+      ),
+    );
+  }
 
-  final Widget _coronalertSection =
-  Container(
-    /*width: width,
-      height: height/3,*/
-    padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
-    decoration: BoxDecoration(
-        color: Colors.white,
+  Widget _coronalertSection(ThemeChanger themeChanger) {
+    return Container(
+      padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+      decoration: BoxDecoration(
+        color: getBackgroundColor(themeChanger),
         borderRadius: BorderRadius.only(
-            topRight: Radius.circular(16),
-            topLeft: Radius.circular(16)
-        )
-    ),
-  );
+          topRight: Radius.circular(16),
+          topLeft: Radius.circular(16),
+        ),
+      ),
+    );
+  }
 
   _launchFormItSelf() async {
     const url =
@@ -104,163 +84,135 @@ class _DashboardScreenState extends State<DashboardScreen> {
     }
   }
 
-  /*Widget _buildFeelingSickSectionCard(){
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children:[
-            Text(getTranslated(context, 'feeling_sick'),
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold
-              ),
-            ),
+  Color getBackgroundColor(ThemeChanger themeChanger) {
+    if (themeChanger.getTheme() == ThemeData.light())
+      return Colors.white;
+    else
+      return Colors.grey[150];
+  }
+
+  final TextStyle _styleTitle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 18,
+  );
+
+  Widget _buildItemCard(
+      Widget section, String title, ThemeChanger themeChanger) {
+    if (title == 'feeling_sick') {
+      return Container(
+        width: 120,
+        height: 145,
+        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+        margin: EdgeInsets.only(left: 32, right: 32, top: 2, bottom: 2),
+        decoration: BoxDecoration(
+            color: getBackgroundColor(themeChanger),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+            boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20)]),
+        child: Column(
+          children: [
+            Text(getTranslated(context, title), style: _styleTitle),
+            section,
             FlatButton.icon(
               label: Text("Call"),
               icon: Icon(Icons.call),
               onPressed: _launchCaller,
             ),
+          ],
+        ),
+      );
+    } else if (title == 'going_trip') {
+      return Container(
+        width: 120,
+        height: 145,
+        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+        margin: EdgeInsets.only(left: 32, right: 32, top: 2, bottom: 2),
+        decoration: BoxDecoration(
+            color: getBackgroundColor(themeChanger),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+            boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20)]),
+        child: Column(
+          children: [
+            Text(getTranslated(context, title), style: _styleTitle),
+            section,
             FlatButton.icon(
-              label: Text("Website"),
-              icon: Icon(Icons.public),
-              onPressed: _launchURL,
+              label: Text("More info"),
+              icon: Icon(Icons.info_outline),
+              onPressed: _launchFormItSelf,
             ),
           ],
         ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.menu, color: Colors.white,),
+      );
+    } else if (title == 'corona_alertapp') {
+      return Container(
+        width: 120,
+        height: 145,
+        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+        margin: EdgeInsets.only(left: 32, right: 32, top: 2, bottom: 2),
+        decoration: BoxDecoration(
+            color: getBackgroundColor(themeChanger),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+            boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20)]),
+        child: Column(
+          children: [
+            Text(getTranslated(context, title), style: _styleTitle),
+            section,
+            FlatButton.icon(
+              label: Text("Get the app!"),
+              icon: Icon(Icons.public),
+              onPressed: _launchCoronaAlertDownloadPage,
             ),
           ],
-        )
-      ],
-    );
-  }
- */
-
-
-  Widget _buildItemCard(Widget section, String title){
-    if (title == 'feeling_sick'){
-      return Container(
-          width: 120,
-          height: 145,
-          padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
-          margin: EdgeInsets.only(left: 32, right: 32, top: 2, bottom: 2),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(16)),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 20
-                )
-              ]
-          ),
-          child: Column(
-            children: [Text(getTranslated(context, title)), section,
-              FlatButton.icon(
-                label: Text("Call"),
-                icon: Icon(Icons.call),
-                onPressed: _launchCaller,
-              ),
-             ],
-          )
+        ),
       );
-    } else if (title == 'going_trip'){
+    } else {
+      // Empty container if title is not given in this if
       return Container(
-          width: 120,
-          height: 145,
-          padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
-          margin: EdgeInsets.only(left: 32, right: 32, top: 2, bottom: 2),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(16)),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 20
-                )
-              ]
-          ),
-          child: Column(
-            children: [Text(getTranslated(context, title)), section,
-              FlatButton.icon(
-                label: Text("More info"),
-                icon: Icon(Icons.info_outline),
-                onPressed: _launchFormItSelf,
-              ),
-            ],
-          )
-      );
-    }
-    else if (title == 'corona_alertapp'){
-      return Container(
-          width: 120,
-          height: 145,
-          padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
-          margin: EdgeInsets.only(left: 32, right: 32, top: 2, bottom: 2),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(16)),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 20
-                )
-              ]
-          ),
-          child: Column(
-            children: [Text(getTranslated(context, title)), section,
-              FlatButton.icon(
-                label: Text("Get the app!"),
-                icon: Icon(Icons.public),
-                onPressed: _launchCoronaAlertDownloadPage,
-              ),
-            ],
-          )
+        width: 120,
+        height: 145,
+        padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+        margin: EdgeInsets.only(left: 32, right: 32, top: 2, bottom: 2),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+            boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20)]),
+        child: Text("", style: _styleTitle),
       );
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
+    ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
 
     final sections = [
       {
         "title": "feeling_sick",
-        "card": _feelingSickSection,
+        "card": _feelingSickSection(_themeChanger),
       },
       {
         "title": "going_trip",
-        "card": _formSection,
+        "card": _formSection(_themeChanger),
       },
       {
         "title": "corona_alertapp",
-        "card": _coronalertSection,
+        "card": _coronalertSection(_themeChanger),
       }
     ];
 
-
-
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: ScreenAppBar(getTranslated(context, 'dashboard')),
       body: Container(
         margin: EdgeInsets.only(top: 16),
         child: ListView.builder(
-        itemCount: sections.length,
-        itemBuilder: (context, index){
-          return _buildItemCard(sections[index]["card"] as Widget,  sections[index]["title"]);
-        }
-      ),
+          itemCount: sections.length,
+          itemBuilder: (context, index) {
+            return _buildItemCard(
+              sections[index]["card"] as Widget,
+              sections[index]["title"],
+              _themeChanger,
+            );
+          },
+        ),
       ),
     );
   }
