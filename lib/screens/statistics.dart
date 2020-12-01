@@ -371,7 +371,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ScreenAppBar(getTranslated(context, 'statistics')),
-      body: Column(
+      body: SingleChildScrollView( child: Column(
         children: [
           // COUNTRY SELECTION
           Center(
@@ -426,7 +426,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             },
           ),
         ],
-      ),
+      ),)
     );
   }
 }
