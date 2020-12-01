@@ -83,7 +83,8 @@ class _LatestNewsScreenState extends State<LatestNewsScreen> {
       final NewsDetail news = NewsDetail(
           description: newsDetail['description'],
           title: newsDetail['title'],
-          url: newsDetail['urlToImage']);
+          url: newsDetail['urlToImage'],
+          urlToLink: newsDetail['url']);
       setState(() {
         items.add(news);
       });

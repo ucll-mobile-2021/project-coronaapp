@@ -1,6 +1,7 @@
 import 'package:coronapp/type/new_detail.dart';
 import 'package:flutter/material.dart';
 import 'styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NewsInfo extends StatelessWidget {
   final NewsDetail newsDetail;
@@ -35,7 +36,8 @@ class NewsInfo extends StatelessWidget {
   List<Widget> _renderInfo(BuildContext context, NewsDetail newsDetail) {
     var result = List<Widget>();
     result.add(_sectionTitle(newsDetail.title));
-    result.add(_sectionText(newsDetail.description));
+    result.add(_sectionText(newsDetail.description, newsDetail));
+    result.add(_sectionReadMore(newsDetail.url));
     return result;
   }
 
@@ -46,14 +48,35 @@ class NewsInfo extends StatelessWidget {
     );
   }
 
-  Widget _sectionText(String text) {
+  Widget _sectionText(String text, NewsDetail newsDetail) {
     return Container(
       padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
-      child: Text(
-        text,
-        style: Styles.textDefault,
+      child:Text(
+          text,
+          style: Styles.textDefault,
+        ),
+    );
+  }
+
+  Widget _sectionReadMore(String url) {
+    return Container(
+      padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 35.0),
+      child: Row(children:
+      [FlatButton.icon(onPressed: () => _launchFormItSelf(newsDetail.urlToLink),
+          icon: Icon(Icons.accessible_forward_sharp),
+          label: Text("Read the whole article")),]
       ),
     );
+  }
+
+
+
+  _launchFormItSelf(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   Widget _bannerImage(String url, double height) {
