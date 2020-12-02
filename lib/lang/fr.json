@@ -29,7 +29,6 @@
   "confirmed": "Confirmés",
   "deaths": "Morts",
   "recovered": "Rétablis",
-  "marko_kliitzak": "Marko est un sale cinnard",
 
   "name": "Nom",
   "version": "Version",
@@ -96,5 +95,28 @@
   "German": "Allemand",
   "Dutch": "Néerlandais",
 
-  "corona_alertapp": "Téléchargez l'appli officielle coronalert ici"
+  "corona_alertapp": "Téléchargez l'appli officielle coronalert ici",
+
+  "cases": "Cas",
+  "nocase": "Les cas n'est pas disponible",
+  "nodeaths": "Les morts n'est pas disponible",
+  "norecover": "Les rétablis n'est pas disponible",
+  "active": "Actifs: ",
+  "noactive": "Actifs n'est pas disponible",
+  "critical": "Critique: ",
+  "nocritic": "Critique n'est pas disponible",
+  "todaycase": "Cas du jour: ",
+  "notodaycase": "Cas du jour n'est pas disponible",
+  "todaydeath": "Morts du jour: ",
+  "nottodaydeath": "Morts du jour n'est pas disponible",
+  "casemill": "Cas/Million: ",
+  "nocasemill": "Cas/Million n'est pas disponible",
+  "deathmill": "Morts/Million: ",
+  "nodeathmill": "Morts/Million n'est pas disponible",
+  "tests": "Tests: ",
+  "notests": "Tests n'est pas disponible",
+  "testmill": "Tests/Million: ",
+  "notestmill": "Tests/Million n'est pas disponible",
+  "apioff": "API hors ligne",
+  "wrong": "Une erreur est survenue :"
 }

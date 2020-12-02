@@ -29,7 +29,6 @@
   "confirmed": "Bevestigd",
   "deaths": "Doden",
   "recovered": "Hersteld",
-  "marko_kliitzak": "Marko is een zieke kliitzak",
 
   "name": "Naam",
   "version": "Versie",
@@ -95,5 +94,28 @@
   "German": "Duits",
   "Dutch": "Nederlands",
 
-  "corona_alertapp": "Download hier de officiële Coronalert app"
+  "corona_alertapp": "Download hier de officiële Coronalert app",
+
+  "cases": "Gevallen",
+  "nocase": "Gevallen is onbeschikbaar",
+  "nodeaths": "Doden is onbeschikbaar",
+  "norecover": "Herstellingen is onbeschikbaar",
+  "active": "Actief: ",
+  "noactive": "Actief is onbeschikbaar",
+  "critical": "Kritisch: ",
+  "nocritic": "Kritisch is onbeschikbaar",
+  "todaycase": "Gavellen vandaag: ",
+  "notodaycase": "Gevallen vandaag is onbeschikbaar",
+  "todaydeath": "Doden vandaag: ",
+  "nottodaydeath": "Doden vandaag is onbeschikbaar",
+  "casemill": "Gevallen/Miljoen: ",
+  "nocasemill": "Gevallen/Miljoen is onbeschikbaar",
+  "deathmill": "Doden/Miljoen: ",
+  "nodeathmill": "Doden/Miljoen is onbeschikbaar",
+  "tests": "Tests: ",
+  "notests": "Tests is onbeschikbaar",
+  "testmill": "Tests/Miljoen: ",
+  "notestmill": "Tests/Miljoen is onbeschikbaar",
+  "apioff": "API offline",
+  "wrong": "Er is een fout opgetreden :"
 }

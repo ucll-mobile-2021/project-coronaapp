@@ -29,7 +29,6 @@
   "confirmed": "Confirmed",
   "deaths": "Deaths",
   "recovered": "Recovered",
-  "marko_kliitzak": "Marko is a sick bitch",
 
   "name": "Name",
   "version": "Version",
@@ -96,5 +95,28 @@
   "German": "German",
   "Dutch": "Dutch",
 
-  "corona_alertapp": "Download the official coronalert app here"
+  "corona_alertapp": "Download the official coronalert app here",
+
+  "cases": "Cases",
+  "nocase": "Cases isn't available",
+  "nodeaths": "Deaths isn't available",
+  "norecover": "Recovered isn't available",
+  "active": "Active: ",
+  "noactive": "Active is not available",
+  "critical": "Critical: ",
+  "nocritic": "Critical isn't available",
+  "todaycase": "Today's cases: ",
+  "notodaycase": "Today's cases isn't available",
+  "todaydeath": "Today's deaths: ",
+  "nottodaydeath": "Today's deaths isn't available",
+  "casemill": "Cases/Million: ",
+  "nocasemill": "Cases/Million isn't available",
+  "deathmill": "Deaths/Million: ",
+  "nodeathmill": "Deaths/Million isn't available",
+  "tests": "Tests: ",
+  "notests": "Testsisn't available",
+  "testmill": "Tests/Million: ",
+  "notestmill": "Tests/Million isn't available",
+  "apioff": "API offline",
+  "wrong": "Something went wrong :"
 }

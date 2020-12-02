@@ -29,7 +29,6 @@
   "confirmed": "Bestätigte",
   "deaths": "Todes",
   "recovered": "Wiederhergestellt",
-  "marko_kliitzak": "Marko ist eine kranke Schlampe",
 
   "name": "Name",
   "version": "Ausführung",
@@ -96,5 +95,28 @@
   "German": "Deutsch",
   "Dutch": "Niederländisch",
 
-  "corona_alertapp": "Laden Sie hier die offizielle Coronalert-App herunter"
+  "corona_alertapp": "Laden Sie hier die offizielle Coronalert-App herunter",
+
+  "cases": "Fälle",
+  "nocase": "Fälle ist nicht verfügbar",
+  "nodeaths": "Todesfälle ist nicht verfügbar",
+  "norecover": "Erholt ist nicht verfügbar",
+  "active": "Aktiv: ",
+  "noactive": "Aktiv ist nicht verfügbar",
+  "critical": "Kritisch: ",
+  "nocritic": "Kritisch ist nicht verfügbar",
+  "todaycase": "Die heutigen Fälle: ",
+  "notodaycase": "Die heutigen Fälle ist nicht verfügbar",
+  "todaydeath": "Die heutigen Todesfälle: ",
+  "nottodaydeath": "Die heutigen Todesfälle ist nicht verfügbar",
+  "casemill": "Fälle/Million: ",
+  "nocasemill": "Fälle/Million ist nicht verfügbar",
+  "deathmill": "Todesfälle/Million: ",
+  "nodeathmill": "Todesfälle/Million ist nicht verfügbar",
+    "tests": "Tests: ",
+  "notests": "Tests ist nicht verfügbar",
+  "testmill": "Tests/Million: ",
+  "notestmill": "Tests/Million ist nicht verfügbar",
+  "apioff": "API offline",
+  "wrong": "Etwas ist schief gelaufen :"
 }

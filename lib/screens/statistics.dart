@@ -38,9 +38,9 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   Widget _showStatsOfTheEarth(CountryStat stats) {
     Map<String, double> _data = new Map();
     _data.addAll({
-      "Cases": stats.getCases().toDouble(),
-      "Recovered": stats.getRecovered().toDouble(),
-      "Deaths": stats.getDeaths().toDouble(),
+      getTranslated(context, "confirmed"): stats.getCases().toDouble(),
+      getTranslated(context, "recovered"): stats.getRecovered().toDouble(),
+      getTranslated(context, "deaths"): stats.getDeaths().toDouble(),
     });
 
     List<Color> _colors = [
@@ -58,19 +58,19 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
               Column(
                 children: [
                   Text(
-                    "Cases: " + stats.getCases().toString(),
+                    getTranslated(context, "cases") + ": " + stats.getCases().toString(),
                     style: TextStyle(
                       fontSize: 19.0,
                     ),
                   ),
                   Text(
-                    "Deaths: " + stats.getDeaths().toString(),
+                    getTranslated(context, "deaths") + ": " + stats.getDeaths().toString(),
                     style: TextStyle(
                       fontSize: 19.0,
                     ),
                   ),
                   Text(
-                    "Recovered: " + stats.getRecovered().toString(),
+                    getTranslated(context,  "recovered") + ": " + stats.getRecovered().toString(),
                     style: TextStyle(
                       fontSize: 19.0,
                     ),
@@ -112,8 +112,8 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   Widget _showStatsOfCountry(CountryStat stats) {
     Map<String, double> _data = new Map();
     _data.addAll({
-      "Cases": stats.getCases().toDouble(),
-      "Deaths": stats.getDeaths().toDouble(),
+      getTranslated(context,  "cases"): stats.getCases().toDouble(),
+      getTranslated(context,  "deaths"): stats.getDeaths().toDouble(),
     });
 
     List<Color> _colors = [
@@ -132,99 +132,99 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                   (() {
                     if (stats.getCases() != 0) {
                       return new Text(
-                        "Cases: " + stats.getCases().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "cases") + ": " + stats.getCases().toString(),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Cases is not available for this country",
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "nocase"),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     }
                   }()),
                   (() {
                     if (stats.getDeaths() != 0) {
                       return new Text(
-                        "Deaths: " + stats.getDeaths().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "deaths") + ": " + stats.getDeaths().toString(),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Deaths is not available for this country",
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "nodeaths"),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     }
                   }()),
                   (() {
                     if (stats.getRecovered() != 0) {
                       return new Text(
-                        "Recovered: " + stats.getRecovered().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "recovered") + ": " + stats.getRecovered().toString(),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Recovered is not available for this country",
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "norecover"),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     }
                   }()),
                   (() {
                     if (stats.getActive() != 0) {
                       return new Text(
-                        "Active: " + stats.getActive().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "active") + stats.getActive().toString(),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Active is not available for this country",
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "noactive"),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     }
                   }()),
                   (() {
                     if (stats.getCritical() != 0) {
                       return new Text(
-                        "Critical: " + stats.getCritical().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "critical") + stats.getCritical().toString(),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Cases is not available for this country",
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "nocritic"),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     }
                   }()),
                   (() {
                     if (stats.getTodayCases() != 0) {
                       return new Text(
-                        "Today's cases: " + stats.getTodayCases().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "todaycase") + stats.getTodayCases().toString(),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Today's cases is not available for this country",
+                        getTranslated(context, "notodaycase"),
                         style: TextStyle(
                           fontSize: 19.0,
                         ),
@@ -234,14 +234,14 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                   (() {
                     if (stats.getTodayDeaths() != 0) {
                       return new Text(
-                        "Today's deaths: " + stats.getTodayDeaths().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "todaydeath") + stats.getTodayDeaths().toString(),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Today's deaths is not available for this country",
+                        getTranslated(context, "nottodaydeath"),
                         style: TextStyle(
                           fontSize: 19.0,
                         ),
@@ -251,33 +251,33 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                   (() {
                     if (stats.getCasesPerOneMillion() != 0) {
                       return new Text(
-                        "Cases/Million: " +
+                          getTranslated(context, "casemill") +
                             stats.getCasesPerOneMillion().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Cases/Million is not available for this country",
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "nocasemill"),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     }
                   }()),
                   (() {
                     if (stats.getDeathsPerOneMillion() != 0) {
                       return new Text(
-                        "Deaths/Million: " +
+                          getTranslated(context, "deathmill") +
                             stats.getDeathsPerOneMillion().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Deaths/Million is not available for this country",
+                        getTranslated(context, "nodeathmill"),
                         style: TextStyle(
                           fontSize: 19.0,
                         ),
@@ -287,31 +287,31 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                   (() {
                     if (stats.getTests() != 0) {
                       return new Text(
-                        "Tests: " + stats.getTests().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "tests") + stats.getTests().toString(),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                          "Tests is not available for this country");
+                          getTranslated(context, "notests"));
                     }
                   }()),
                   (() {
                     if (stats.getTestsPerOneMillion() != 0) {
                       return new Text(
-                        "Tests/Million: " +
+                          getTranslated(context, "testmill") +
                             stats.getTestsPerOneMillion().toString(),
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     } else {
                       return new Text(
-                        "Tests/Million is not available for this country",
-                        style: TextStyle(
-                          fontSize: 19.0,
-                        ),
+                          getTranslated(context, "notestmill"),
+                          style: TextStyle(
+                            fontSize: 19.0,
+                          ),
                       );
                     }
                   }()),
@@ -356,15 +356,15 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   // Show that the API is offline
   Widget _showApiOffline() {
     return Container(
-      child: Text("API offline"),
+      child: Text(getTranslated(context, "apioff")),
     );
   }
 
   // Show that something went wrong
   Widget _showSomethingWentWrong(String error) {
-    print("Something went wrong: " + error);
+    print(getTranslated(context, "wrong") + error);
     return Container(
-      child: Text("Something went wrong :(" + error),
+      child: Text(getTranslated(context, "wrong") + "(" + error),
     );
   }
 
