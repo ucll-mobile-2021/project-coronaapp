@@ -117,5 +117,7 @@
   "testmill": "Tests/Miljoen: ",
   "notestmill": "Tests/Miljoen is onbeschikbaar",
   "apioff": "API offline",
-  "wrong": "Er is een fout opgetreden :"
+  "wrong": "Er is een fout opgetreden :",
+
+  "read": "Het artikel verderlezen"
 }

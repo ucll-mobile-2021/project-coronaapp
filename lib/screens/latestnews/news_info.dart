@@ -1,3 +1,4 @@
+import 'package:coronapp/localization/translation.dart';
 import 'package:coronapp/type/new_detail.dart';
 import 'package:flutter/material.dart';
 import 'styles.dart';
@@ -37,7 +38,7 @@ class NewsInfo extends StatelessWidget {
     var result = List<Widget>();
     result.add(_sectionTitle(newsDetail.title));
     result.add(_sectionText(newsDetail.description, newsDetail));
-    result.add(_sectionReadMore(newsDetail.url));
+    result.add(_sectionReadMore(newsDetail.url, context));
     return result;
   }
 
@@ -58,13 +59,13 @@ class NewsInfo extends StatelessWidget {
     );
   }
 
-  Widget _sectionReadMore(String url) {
+  Widget _sectionReadMore(String url, BuildContext context) {
     return Container(
       padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 35.0),
       child: Row(children:
       [FlatButton.icon(onPressed: () => _launchFormItSelf(newsDetail.urlToLink),
           icon: Icon(Icons.accessible_forward_sharp),
-          label: Text("Read the whole article")),]
+          label: Text(getTranslated(context, "read"))),]
       ),
     );
   }

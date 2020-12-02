@@ -118,5 +118,7 @@
   "testmill": "Tests/Million: ",
   "notestmill": "Tests/Million n'est pas disponible",
   "apioff": "API hors ligne",
-  "wrong": "Une erreur est survenue :"
+  "wrong": "Une erreur est survenue :",
+
+  "read": "Lire l'article entier"
 }

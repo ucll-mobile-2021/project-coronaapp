@@ -118,5 +118,7 @@
   "testmill": "Tests/Million: ",
   "notestmill": "Tests/Million isn't available",
   "apioff": "API offline",
-  "wrong": "Something went wrong :"
+  "wrong": "Something went wrong :",
+
+  "read": "Read the whole article"
 }
