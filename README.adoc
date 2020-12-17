@@ -8,9 +8,9 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 
 == Screens
 === Dashboard
-* [ ] Feeling sick? (call & website button)
-* [ ] Reference to "Passenger Locator Form"
-* [ ] Reference to the official CoronAlert app
+* [X] Feeling sick? (call & website button)
+* [X] Reference to "Passenger Locator Form"
+* [X] Reference to the official CoronAlert app
 ** https://play.google.com/store/apps/details?id=be.sciensano.coronalert)[Andriod]
 ** https://apps.apple.com/us/app/id1526431891)[IOS]
 
@@ -31,7 +31,6 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 * [x] Total tips: 8
 
 === More
-* [ ] Help
 * [x] FAQ
 * [x] Game (Using Sensor)
 * [x] Settings
@@ -46,8 +45,8 @@ Corona app is an app project for the subject "Mobiele Toepassingen" at UC Leuven
 * Statistics screen uses a random API
 * Free (for everyone)
 * Unlimited requests/day
-* https://github.com/javieraviles/covidAPI[Github]
-* https://coronavirus-19-api.herokuapp.com/[Website]
+
+Reference: https://github.com/javieraviles/covidAPI[Github] & https://coronavirus-19-api.herokuapp.com/[Website]
 
 === News-API
 * Latest news screen uses the https://newsapi.org/[News API]

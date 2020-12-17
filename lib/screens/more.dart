@@ -17,12 +17,13 @@ class MoreScreen extends StatefulWidget {
 
 class _MoreScreenState extends State<MoreScreen> {
   final listOfMoreItems = [
+    /*
     {
       "title": "help",
       "icon": Icons.help,
       "info": "call_911",
       "tab": HelpTab(),
-    },
+    },*/
     {
       "title": "faq",
       "icon": Icons.question_answer,
