@@ -36,16 +36,17 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
 
   // Show the statistics of the world
   Widget _showStatsOfTheEarth(CountryStat stats) {
+    double total = (stats.getCases() / 2 + stats.getDeaths() / 2 + stats.getRecovered()).toDouble();
     Map<String, double> _data = new Map();
     _data.addAll({
-      getTranslated(context, "confirmed"): stats.getCases().toDouble(),
-      getTranslated(context, "recovered"): stats.getRecovered().toDouble(),
-      getTranslated(context, "deaths"): stats.getDeaths().toDouble(),
+      getTranslated(context, 'confirmed'): ((stats.getCases() / total) * 50).toDouble(),
+      getTranslated(context, 'deaths'): ((stats.getDeaths() / total) * 50).toDouble(),
+      getTranslated(context, 'recovered'): ((stats.getRecovered() / total) * 100).toDouble(),
     });
 
     List<Color> _colors = [
       Colors.green,
-      Colors.blueAccent,
+      Colors.amberAccent,
       Colors.red,
     ];
 
@@ -87,7 +88,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                 animationDuration: Duration(milliseconds: 1500),
                 chartLegendSpacing: 32.0,
                 chartRadius: MediaQuery.of(context).size.width / 2.7,
-                showChartValuesInPercentage: false,
+                showChartValuesInPercentage: true,
                 showChartValues: true,
                 showChartValuesOutside: false,
                 chartValueBackgroundColor: Colors.grey[200],
@@ -110,15 +111,29 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
 
   // Show the statistics of a country
   Widget _showStatsOfCountry(CountryStat stats) {
+    // Map<String, double> _data = new Map();
+    // _data.addAll({
+    //   getTranslated(context,  "cases"): stats.getCases().toDouble(),
+    //   getTranslated(context,  "deaths"): stats.getDeaths().toDouble(),
+    // });
+    //
+    // List<Color> _colors = [
+    //   Colors.red,
+    //   Colors.teal,
+    // ];
+
+    double total = (stats.getCases() / 2 + stats.getDeaths() / 2 + stats.getRecovered()).toDouble();
     Map<String, double> _data = new Map();
     _data.addAll({
-      getTranslated(context,  "cases"): stats.getCases().toDouble(),
-      getTranslated(context,  "deaths"): stats.getDeaths().toDouble(),
+      getTranslated(context, 'confirmed'): ((stats.getCases() / total) * 50).toDouble(),
+      getTranslated(context, 'deaths'): ((stats.getDeaths() / total) * 50).toDouble(),
+      getTranslated(context, 'recovered'): ((stats.getRecovered() / total) * 100).toDouble(),
     });
 
     List<Color> _colors = [
+      Colors.green,
+      Colors.amberAccent,
       Colors.red,
-      Colors.teal,
     ];
 
     return Padding(
@@ -330,7 +345,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                     animationDuration: Duration(milliseconds: 1500),
                     chartLegendSpacing: 32.0,
                     chartRadius: MediaQuery.of(context).size.width / 2.7,
-                    showChartValuesInPercentage: false,
+                    showChartValuesInPercentage: true,
                     showChartValues: true,
                     showChartValuesOutside: true,
                     chartValueBackgroundColor: Colors.grey[200],
