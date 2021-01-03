@@ -68,8 +68,8 @@ class _LatestNewsScreenState extends State<LatestNewsScreen> {
 
   void getNews() async {
     // https://newsapi.org/
-    final apikey = "73dd237980f14041b2f33f3317df76c2";
-    final fromdate = "2020-11-20";
+    final apikey = "382109a5f6d64cde90d302082d893465";
+    final fromdate = "2020-12-26";
     final sortby = "popularity";
     final url = "http://newsapi.org/v2/everything?q=Covid&from=" +
         fromdate +

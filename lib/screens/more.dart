@@ -1,7 +1,7 @@
 import 'package:coronapp/localization/translation.dart';
 import 'package:coronapp/screens/more/faq.dart';
 import 'package:coronapp/screens/more/game.dart';
-import 'package:coronapp/screens/more/help.dart';
+//import 'package:coronapp/screens/more/help.dart';
 import 'package:coronapp/screens/more/info.dart';
 import 'package:coronapp/screens/more/settings.dart';
 import 'package:coronapp/widgets/screenappbar.dart';
